@@ -17,7 +17,7 @@ import Study from "./components/sets/Study";
 import CreateSet from "./components/sets/CreateSet";
 import EditSet from "./components/sets/EditSet";
 import Analysis from "./components/analysis/Analysis";
-import Dashboard from "./components/user/Dashboard";
+import Dashboard from "./components/users/Dashboard";
 import Cards from "./components/cards/Cards";
 import CreateCard from "./components/cards/CreateCard";
 import EditCard from "./components/cards/EditCard";

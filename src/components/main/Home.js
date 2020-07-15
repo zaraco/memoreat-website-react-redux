@@ -3,14 +3,21 @@ import Grid from "@material-ui/core/Grid";
 import './Home.css';
 
 
+
+
 const Home = () => {
+
     return (
-        <Grid container>
-            <Grid item xs={12}>
-                <div className="home-image">
-                </div>
+        <div className="header">
+            <Grid container className="content">
+                <Grid item xs={12} className="home-image">
+                    <h1>
+                        Memoreat
+                    </h1>
+
+                </Grid>
             </Grid>
-        </Grid>
+        </div>
     )
 };
 
