@@ -2,11 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53068fc9-011a-4179-9c54-57f191c8a013" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/analysis/Analysis.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/auth/Forgot.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/auth/Login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/auth/Register.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/auth/Resend.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/cards/Cards.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/cards/CreateCard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/cards/EditCard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/main/Contacts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/main/Help.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/main/Home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/main/Terms.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/sets/CreateSet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/sets/EditSet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/sets/Exam.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/sets/Set.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/sets/Sets.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/sets/Study.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/user/Dashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -14,11 +28,20 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1eiOB4LSeZkvtKHfV1e8KGdtnXD" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -33,7 +56,13 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/cards" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
@@ -61,7 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1594800807298</updated>
       <workItem from="1594800809551" duration="1341000" />
-      <workItem from="1594803114376" duration="929000" />
+      <workItem from="1594803114376" duration="4252000" />
     </task>
     <servers />
   </component>
@@ -73,5 +102,21 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="483" y="260" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1594803067854" />
+    <state width="1419" height="244" key="GridCell.Tab.0.bottom" timestamp="1594808686638">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="244" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1594808686638" />
+    <state width="1419" height="244" key="GridCell.Tab.0.center" timestamp="1594808686635">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="244" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1594808686635" />
+    <state width="1419" height="244" key="GridCell.Tab.0.left" timestamp="1594808686634">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="244" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1594808686634" />
+    <state width="1419" height="244" key="GridCell.Tab.0.right" timestamp="1594808686637">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="244" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1594808686637" />
   </component>
 </project>
