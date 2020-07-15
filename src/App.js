@@ -28,7 +28,7 @@ import Sidebar from "./components/base/Sidebar";
 
 
 const App = (props) => {
-    const drawerWidth = 240;
+    const drawerWidth = 200;
 
     const useStyles = makeStyles((theme) => ({
         root: {
@@ -58,12 +58,11 @@ const App = (props) => {
             width: drawerWidth,
         },
         content: {
-            flexGrow: 1,
-            padding: theme.spacing(3),
+            flexGrow: 1
         },
     }));
 
-    const { window } = props;
+    const {window} = props;
     const classes = useStyles();
     const theme = useTheme();
     const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -75,13 +74,14 @@ const App = (props) => {
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
-        <div className={classes.root}>
-            <CssBaseline />
-            <TopBar classes={classes} handleDrawerToggle={handleDrawerToggle}/>
-            <Sidebar classes={classes} container={container} theme={theme} mobileOpen={mobileOpen} handleDrawerToggle={handleDrawerToggle}/>
-            <main className={classes.content}>
-                <div className={classes.toolbar} />
-                <Router>
+        <Router>
+            <div className={classes.root}>
+                <CssBaseline/>
+                <TopBar classes={classes} handleDrawerToggle={handleDrawerToggle}/>
+                <Sidebar classes={classes} container={container} theme={theme} mobileOpen={mobileOpen}
+                         handleDrawerToggle={handleDrawerToggle}/>
+                <main className={classes.content}>
+                    <div className={classes.toolbar}/>
                     <Switch>
                         <Route path='/' exact component={Home}/>
                         <Route path='/contacts' component={Contacts}/>
@@ -108,9 +108,9 @@ const App = (props) => {
                         <Route path='/sets/:id/cards/create' component={CreateCard}/>
                         <Route path='/cards/:id/edit' component={EditCard}/>
                     </Switch>
-                </Router>
-            </main>
-        </div>
+                </main>
+            </div>
+        </Router>
     );
 }
 

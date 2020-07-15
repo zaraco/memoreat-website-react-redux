@@ -10,7 +10,7 @@ import AssignmentReturnedRoundedIcon from '@material-ui/icons/AssignmentReturned
 import LiveHelpRoundedIcon from '@material-ui/icons/LiveHelpRounded';
 import GavelRoundedIcon from '@material-ui/icons/GavelRounded';
 import ListItemText from "@material-ui/core/ListItemText";
-import Link from "@material-ui/core/Link";
+import {Link} from "react-router-dom";
 
 
 const SidebarList = (props) => {
@@ -49,7 +49,7 @@ const SidebarList = (props) => {
             <Divider/>
             <List>
                 {pages.map((item, index) => (
-                    <Link href={item.link}>
+                    <Link to={item.link}>
                         <ListItem button key={index}>
                             <ListItemIcon>{item.icon}</ListItemIcon>
                             <ListItemText primary={item.title}/>
