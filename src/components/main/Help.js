@@ -1,10 +1,8 @@
 import React from 'react';
 
-
-const Help = () => {
-    return(
+const Help = (props) => {
+    return (
         <>
-
         </>
     )
 };

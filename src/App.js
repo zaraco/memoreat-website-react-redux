@@ -21,46 +21,97 @@ import Dashboard from "./components/user/Dashboard";
 import Cards from "./components/cards/Cards";
 import CreateCard from "./components/cards/CreateCard";
 import EditCard from "./components/cards/EditCard";
+import {makeStyles, useTheme} from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import TopBar from "./components/base/TopBar";
+import Sidebar from "./components/base/Sidebar";
 
 
-const App = () => {
+const App = (props) => {
+    const drawerWidth = 240;
+
+    const useStyles = makeStyles((theme) => ({
+        root: {
+            display: 'flex',
+        },
+        drawer: {
+            [theme.breakpoints.up('sm')]: {
+                width: drawerWidth,
+                flexShrink: 0,
+            },
+        },
+        appBar: {
+            [theme.breakpoints.up('sm')]: {
+                width: `calc(100% - ${drawerWidth}px)`,
+                marginLeft: drawerWidth,
+            },
+        },
+        menuButton: {
+            marginRight: theme.spacing(2),
+            [theme.breakpoints.up('sm')]: {
+                display: 'none',
+            },
+        },
+        // necessary for content to be below app bar
+        toolbar: theme.mixins.toolbar,
+        drawerPaper: {
+            width: drawerWidth,
+        },
+        content: {
+            flexGrow: 1,
+            padding: theme.spacing(3),
+        },
+    }));
+
+    const { window } = props;
+    const classes = useStyles();
+    const theme = useTheme();
+    const [mobileOpen, setMobileOpen] = React.useState(false);
+
+    const handleDrawerToggle = () => {
+        setMobileOpen(!mobileOpen);
+    };
+
+    const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
-        <Router>
-            <Switch>
-                // main
-                <Route path='/' exact component={Home}/>
-                <Route path='/contacts' component={Contacts}/>
-                <Route path='/help' component={Help}/>
-                <Route path='/terms' component={Terms}/>
+        <div className={classes.root}>
+            <CssBaseline />
+            <TopBar classes={classes} handleDrawerToggle={handleDrawerToggle}/>
+            <Sidebar classes={classes} container={container} theme={theme} mobileOpen={mobileOpen} handleDrawerToggle={handleDrawerToggle}/>
+            <main className={classes.content}>
+                <div className={classes.toolbar} />
+                <Router>
+                    <Switch>
+                        <Route path='/' exact component={Home}/>
+                        <Route path='/contacts' component={Contacts}/>
+                        <Route path='/help' component={Help}/>
+                        <Route path='/terms' component={Terms}/>
 
-                //auth
-                <Route path='/auth/resend' component={Resend}/>
-                <Route path='/auth/forgot' component={Forgot}/>
-                <Route path='/auth/login' component={Login}/>
-                <Route path='/auth/register' component={Register}/>
+                        <Route path='/auth/resend' component={Resend}/>
+                        <Route path='/auth/forgot' component={Forgot}/>
+                        <Route path='/auth/login' component={Login}/>
+                        <Route path='/auth/register' component={Register}/>
 
-                //sets
-                <Route path='/sets' exact component={Sets}/>
-                <Route path='/sets/:id' exact component={Set}/>
-                <Route path='/sets/:id/exam' component={Exam}/>
-                <Route path='/sets/:id/study' component={Study}/>
-                <Route path='/sets/create' component={CreateSet}/>
-                <Route path='/sets/:id/edit' component={EditSet}/>
+                        <Route path='/sets' exact component={Sets}/>
+                        <Route path='/sets/:id' exact component={Set}/>
+                        <Route path='/sets/:id/exam' component={Exam}/>
+                        <Route path='/sets/:id/study' component={Study}/>
+                        <Route path='/sets/create' component={CreateSet}/>
+                        <Route path='/sets/:id/edit' component={EditSet}/>
 
-                //analysis
-                <Route path='/analysis' component={Analysis}/>
+                        <Route path='/analysis' component={Analysis}/>
 
-                //user
-                <Route path='/dashboard' component={Dashboard}/>
+                        <Route path='/dashboard' component={Dashboard}/>
 
-                //cards
-                <Route path='/sets/:id/cards' exact component={Cards}/>
-                <Route path='/sets/:id/cards/create' component={CreateCard}/>
-                <Route path='/cards/:id/edit' component={EditCard}/>
-            </Switch>
-        </Router>
-    )
+                        <Route path='/sets/:id/cards' exact component={Cards}/>
+                        <Route path='/sets/:id/cards/create' component={CreateCard}/>
+                        <Route path='/cards/:id/edit' component={EditCard}/>
+                    </Switch>
+                </Router>
+            </main>
+        </div>
+    );
 }
 
 export default App;
