@@ -3173,6 +3173,13 @@ connect-history-api-fallback@^1.6.0:
   resolved "https://registry.yarnpkg.com/connect-history-api-fallback/-/connect-history-api-fallback-1.6.0.tgz#8b32089359308d111115d81cad3fceab888f97bc"
   integrity sha512-e54B99q/OUoH64zYYRf3HBP5z24G38h5D3qXu23JGRoigpX5Ss4r9ZnDk3g0Z8uQC2x2lPaJ+UlWBc1ZWBWdLg==
 
+connected-react-router@^6.8.0:
+  version "6.8.0"
+  resolved "https://registry.yarnpkg.com/connected-react-router/-/connected-react-router-6.8.0.tgz#ddc687b31d498322445d235d660798489fa56cae"
+  integrity sha512-E64/6krdJM3Ag3MMmh2nKPtMbH15s3JQDuaYJvOVXzu6MbHbDyIvuwLOyhQIuP4Om9zqEfZYiVyflROibSsONg==
+  dependencies:
+    prop-types "^15.7.2"
+
 console-browserify@^1.1.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/console-browserify/-/console-browserify-1.2.0.tgz#67063cef57ceb6cf4993a2ab3a55840ae8c49336"
@@ -8626,7 +8633,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.4"
 
-prop-types@^15.5.8, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -8941,21 +8948,6 @@ react-scripts@3.4.1:
     workbox-webpack-plugin "4.3.1"
   optionalDependencies:
     fsevents "2.1.2"
-
-react-spring@^8.0.27:
-  version "8.0.27"
-  resolved "https://registry.yarnpkg.com/react-spring/-/react-spring-8.0.27.tgz#97d4dee677f41e0b2adcb696f3839680a3aa356a"
-  integrity sha512-nDpWBe3ZVezukNRandTeLSPcwwTMjNVu1IDq9qA/AMiUqHuRN4BeSWvKr3eIxxg1vtiYiOLy4FqdfCP5IoP77g==
-  dependencies:
-    "@babel/runtime" "^7.3.1"
-    prop-types "^15.5.8"
-
-react-text-transition@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/react-text-transition/-/react-text-transition-1.1.1.tgz#ad3147b3e68cb8c3f874f0341f4dbe88002928d9"
-  integrity sha512-1IdmM1iNNcETugia/jF45oiFJJi8BVAIpsyqqwjzYzkVEDT8+PCRfVgRjavmRV7kx1i1knJiprHDIEs1QyVCcQ==
-  dependencies:
-    react-spring "^8.0.27"
 
 react-transition-group@^4.4.0:
   version "4.4.1"
