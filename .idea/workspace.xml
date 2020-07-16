@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53068fc9-011a-4179-9c54-57f191c8a013" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/sets.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/sets.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/action/action.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +80,8 @@
       <updated>1594800807298</updated>
       <workItem from="1594800809551" duration="1341000" />
       <workItem from="1594803114376" duration="14961000" />
-      <workItem from="1594826831283" duration="2137000" />
+      <workItem from="1594826831283" duration="3250000" />
+      <workItem from="1594887807389" duration="5740000" />
     </task>
     <servers />
   </component>
@@ -88,21 +93,25 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="483" y="260" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1594803067854" />
-    <state width="1419" height="244" key="GridCell.Tab.0.bottom" timestamp="1594828692538">
+    <state width="1419" height="244" key="GridCell.Tab.0.bottom" timestamp="1594890889330">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="244" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1594828692538" />
-    <state width="1419" height="244" key="GridCell.Tab.0.center" timestamp="1594828692537">
+    <state width="1419" height="244" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1594890889330" />
+    <state width="1419" height="244" key="GridCell.Tab.0.bottom/0.23.1440.831@0.23.1440.831" timestamp="1594846838104" />
+    <state width="1419" height="244" key="GridCell.Tab.0.center" timestamp="1594890889328">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="244" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1594828692537" />
-    <state width="1419" height="244" key="GridCell.Tab.0.left" timestamp="1594828692536">
+    <state width="1419" height="244" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1594890889328" />
+    <state width="1419" height="244" key="GridCell.Tab.0.center/0.23.1440.831@0.23.1440.831" timestamp="1594846838102" />
+    <state width="1419" height="244" key="GridCell.Tab.0.left" timestamp="1594890889327">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="244" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1594828692536" />
-    <state width="1419" height="244" key="GridCell.Tab.0.right" timestamp="1594828692538">
+    <state width="1419" height="244" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1594890889327" />
+    <state width="1419" height="244" key="GridCell.Tab.0.left/0.23.1440.831@0.23.1440.831" timestamp="1594846838101" />
+    <state width="1419" height="244" key="GridCell.Tab.0.right" timestamp="1594890889329">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="244" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1594828692538" />
+    <state width="1419" height="244" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1594890889329" />
+    <state width="1419" height="244" key="GridCell.Tab.0.right/0.23.1440.831@0.23.1440.831" timestamp="1594846838103" />
   </component>
 </project>
