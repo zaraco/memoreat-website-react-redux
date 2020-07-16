@@ -1,32 +1,31 @@
-const API_URL = process.env.API_URL;
-
 export const API_HEADER = {
-    Accept: 'application/json',
-    'Content-Type': 'application/json'
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+    "X-Requested-With": "XMLHttpRequest"
 };
 
 export const API_ENDPOINTS = {
         auth: {
-            login: `${API_URL}/user/login`,
-            register: `${API_URL}/user/signup`
+            login: `/user/login`,
+            register: `/user/signup`
         },
         sets: {
-            all: `${API_URL}/sets`,
-            one: `${API_URL}/set`,
+            all: `/sets`,
+            one: `/set`,
             create: ``,
             edit: ``
         }
         ,
         cards: {
-            all: `${API_URL}/set/cards`,
+            all: `/set/cards`,
             create: ``,
             edit: ``
 
         }
         ,
         exam: {
-            enter: `${API_URL}/set/exam/enter`,
-            exam: `${API_URL}/set/exam`
+            enter: `/set/exam/enter`,
+            exam: `/set/exam`
         }
 
     };
