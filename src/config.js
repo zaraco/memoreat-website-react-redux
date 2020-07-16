@@ -1,3 +1,4 @@
+const API_URL = process.env.API_URL;
 
 export const API_HEADER = {
     Accept: 'application/json',
@@ -6,26 +7,26 @@ export const API_HEADER = {
 
 export const API_ENDPOINTS = {
         auth: {
-            login: `${}/user/login`,
-            register: `${}/user/signup`
+            login: `${API_URL}/user/login`,
+            register: `${API_URL}/user/signup`
         },
         sets: {
-            all: `${}/sets`,
-            one: `${}/set`,
+            all: `${API_URL}/sets`,
+            one: `${API_URL}/set`,
             create: ``,
             edit: ``
         }
         ,
         cards: {
-            all: `${}/set/cards`,
+            all: `${API_URL}/set/cards`,
             create: ``,
             edit: ``
 
         }
         ,
         exam: {
-            enter: `${}/set/exam/enter`,
-            exam: `${}/set/exam`
+            enter: `${API_URL}/set/exam/enter`,
+            exam: `${API_URL}/set/exam`
         }
 
     };

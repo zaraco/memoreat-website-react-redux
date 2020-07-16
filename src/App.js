@@ -25,6 +25,9 @@ import {makeStyles, useTheme} from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TopBar from "./components/base/TopBar";
 import Sidebar from "./components/base/Sidebar";
+import { ConnectedRouter } from 'connected-react-router';
+import { history } from './redux/store';
+
 
 
 const App = (props) => {
@@ -74,6 +77,7 @@ const App = (props) => {
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
+        <ConnectedRouter history={history}>
         <Router>
             <div className={classes.root}>
                 <CssBaseline/>
@@ -111,7 +115,8 @@ const App = (props) => {
                 </main>
             </div>
         </Router>
+        </ConnectedRouter>
     );
-}
+};
 
 export default App;

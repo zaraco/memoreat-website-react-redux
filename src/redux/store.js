@@ -1,10 +1,22 @@
-import { createStore, applyMiddleware } from 'redux';
+import {createStore, applyMiddleware, compose} from 'redux';
 import { apiMiddleware } from 'redux-api-middleware';
 import reducers from './reducers';
+import {createBrowserHistory} from "history";
 
-const history= createBrowserHistory()
-const createStoreWithMiddleware = applyMiddleware(apiMiddleware)(createStore);
+const devTools = window.__REDUX_DEVTOOLS_EXTENSION__
+    ? window.__REDUX_DEVTOOLS_EXTENSION__({
+        name: 'Memoreat',
+    })
+    : (f) => f;
 
-export default function configureStore(initialState) {
-    return createStoreWithMiddleware(reducers, initialState);
-}
+export const history = createBrowserHistory();
+
+export default function initStore() {
+    const middlewares = [
+        apiMiddleware
+    ];
+    return createStore(
+        reducers(history),
+        compose(applyMiddleware(...middlewares), devTools),
+    );
+};
