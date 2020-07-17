@@ -1,14 +1,23 @@
-import { useDispatch } from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import { useCallback } from 'react';
 
 import {
     fetchLogin,
     fetchRegister
 } from '../redux/action/action';
+import {cardsSelectors} from "../redux/selectors/cards";
+import {authSelectors} from "../redux/selectors/auth";
 
 const useAuth = () => {
 
     const dispatch = useDispatch();
+
+
+    const isLoggedIn = useSelector(authSelectors.isLoggedIn);
+
+    const user = useSelector(authSelectors.user);
+
+    const token = useSelector(authSelectors.token);
 
 
     const fetchAuthLogin = useCallback((payload) => {
@@ -22,7 +31,7 @@ const useAuth = () => {
 
 
 
-    return {fetchAuthLogin, fetchAuthRegister};
+    return {fetchAuthLogin, fetchAuthRegister, isLoggedIn, user, token};
 
 };
 

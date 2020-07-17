@@ -11,11 +11,15 @@ import LiveHelpRoundedIcon from '@material-ui/icons/LiveHelpRounded';
 import GavelRoundedIcon from '@material-ui/icons/GavelRounded';
 import ListItemText from "@material-ui/core/ListItemText";
 import {Link} from "react-router-dom";
+import useAuth from "../../hooks/auth";
 
 
 const SidebarList = (props) => {
     const classes = props.classes;
-    const pages = [
+
+    const {isLoggedIn} = useAuth()
+
+    let pages = [
         {
             title: "Home",
             icon: <HomeRoundedIcon />,
@@ -43,6 +47,33 @@ const SidebarList = (props) => {
         },
 
     ];
+
+    if(isLoggedIn !== true){
+        pages.push (
+            {
+                title: "login",
+                icon: <HomeRoundedIcon />,
+                link: "/auth/login"
+            },
+            {
+                title: "register",
+                icon: <HomeRoundedIcon />,
+                link: "/auth/register"
+            },
+
+        )
+    }
+    else {
+        pages.push(
+            {
+                title: "Dashboard",
+                icon: <HomeRoundedIcon />,
+                link: "/dashboard"
+            },
+        )
+
+    }
+
     return (
         <div>
             <div className={classes.toolbar}/>
