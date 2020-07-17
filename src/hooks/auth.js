@@ -17,6 +17,10 @@ const useAuth = () => {
 
     const login = useSelector(authSelectors.login);
 
+    const error = useSelector(authSelectors.error);
+
+
+
 
     const fetchAuthLogin = useCallback((payload) => {
         dispatch(fetchLogin(payload));
@@ -31,7 +35,7 @@ const useAuth = () => {
     }, []);
 
 
-    return {fetchAuthLogin, fetchAuthRegister, isLoggedIn, user, token, login, authLoginForm};
+    return {fetchAuthLogin, fetchAuthRegister, isLoggedIn, user, token, login, authLoginForm, error};
 
 };
 

@@ -12,11 +12,14 @@ import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import Alert from '@material-ui/lab/Alert';
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import useAuth from "../../hooks/auth";
 import Button from "@material-ui/core/Button";
 import useMain from "../../hooks/main";
+import {fetchIndex} from "../../redux/action/action";
+import {useDispatch} from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -30,8 +33,13 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Login() {
     const classes = useStyles();
-    const {login, authLoginForm, fetchAuthLogin} = useAuth();
+    const {login, authLoginForm, fetchAuthLogin, error} = useAuth();
     const {app_token} = useMain();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchIndex({}))
+    }, []);
 
     const handleChangeUsername = (e) => {
         authLoginForm({
@@ -61,6 +69,12 @@ export default function Login() {
 
     const handleClickButton = (event) => {
         event.preventDefault();
+        console.log({
+            app_id: process.env.REACT_APP_APP_ID,
+            app_token: app_token,
+            username: login.username,
+            password: login.password
+        })
         fetchAuthLogin({
             app_id: process.env.REACT_APP_APP_ID,
             app_token: app_token,
@@ -72,6 +86,9 @@ export default function Login() {
     return (
         <div className={classes.root}>
             <Container>
+                {
+                    error ? <Alert severity="error">{error}</Alert> : null
+                }
                 <Grid container spacing={2}>
                     <Grid item sm={12} md={4}>
                         <TextField className={clsx(classes.margin, classes.textField)}

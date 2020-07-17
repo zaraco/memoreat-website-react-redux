@@ -71,10 +71,6 @@ const App = (props) => {
     const theme = useTheme();
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
-    useEffect(() => {
-        fetchIndex();
-    }, []);
-
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);

@@ -8,6 +8,7 @@ const reducer = {
         app_token: payload.app_token
     }),
 
+
 }
 
 export default (state = DEFAULT_STATE, action) =>

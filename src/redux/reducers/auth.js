@@ -6,7 +6,8 @@ const DEFAULT_STATE = {
         username: '',
         password: '',
         showPassword: false,
-    }
+    },
+    error: null
 };
 
 const reducer = {
@@ -15,14 +16,16 @@ const reducer = {
         token: payload.token,
         user: payload.user,
         isLoggedIn: true,
-        login: null
+        login: null,
+        error:null
     }),
 
     LOGIN_FAILURE: (state) => ({
         ...state,
         token: null,
         user: null,
-        isLoggedIn: false
+        isLoggedIn: false,
+        error: "wrong"
     }),
 
     LOGIN_FORM: (state, {login}) => ({

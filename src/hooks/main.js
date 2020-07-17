@@ -4,7 +4,6 @@ import { useCallback } from 'react';
 import {
     fetchIndex,
 } from '../redux/action/action';
-import {cardsSelectors} from "../redux/selectors/cards";
 import {mainSelectors} from "../redux/selectors/main";
 
 
