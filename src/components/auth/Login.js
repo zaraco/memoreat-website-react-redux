@@ -15,6 +15,7 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import useAuth from "../../hooks/auth";
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -28,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Login() {
     const classes = useStyles();
-    const {login, authLoginForm} = useAuth();
+    const {login, authLoginForm, fetchAuthLogin} = useAuth();
 
 
     const handleChangeUsername = (e) => {
@@ -57,11 +58,21 @@ export default function Login() {
         event.preventDefault();
     };
 
+    const handleClickButton = (event) => {
+        event.preventDefault();
+        fetchAuthLogin({
+            app_id: process.env.REACT_APP_APP_ID,
+            app_token:"",
+            username: login.username,
+            password: login.password
+        })
+    }
+
     return (
         <div className={classes.root}>
             <Container>
-                <Grid container spacing={4}>
-                    <Grid item sm={12} md={6}>
+                <Grid container spacing={2}>
+                    <Grid item sm={12} md={4}>
                         <TextField className={clsx(classes.margin, classes.textField)}
                                    id="outlined-basic"
                                    label="Outlined"
@@ -70,7 +81,7 @@ export default function Login() {
                                    value={login ? login.username : ""}
                         />
                     </Grid>
-                    <Grid item sm={12} md={6}>
+                    <Grid item sm={12} md={4}>
                         <FormControl className={clsx(classes.margin, classes.textField)} variant="outlined">
                             <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
                             <OutlinedInput
@@ -93,7 +104,13 @@ export default function Login() {
                                 labelWidth={70}
                             />
                         </FormControl>
+
                     </Grid>
+                    <Grid item sm={12} md={4}>
+                    <Button variant="contained" color="secondary" onClick={handleClickButton}>
+                        Secondary
+                    </Button>
+                </Grid>
                 </Grid>
             </Container>
         </div>
