@@ -22,7 +22,16 @@ export const fetchRegister = (payload) => {
         headers: API_HEADER,
         body: JSON.stringify(payload)
     });
+
 };
+
+export const loginForm = (login) => (dispatch) => {
+    return dispatch({
+        type: 'LOGIN_FORM',
+        login
+    });
+};
+
 
 
 //sets

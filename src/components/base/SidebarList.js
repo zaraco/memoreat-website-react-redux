@@ -3,7 +3,6 @@ import Divider from "@material-ui/core/Divider";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
-import {MoveToInbox} from "@material-ui/icons";
 import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
 import AssignmentReturnedRoundedIcon from '@material-ui/icons/AssignmentReturnedRounded';

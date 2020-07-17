@@ -1,7 +1,12 @@
 const DEFAULT_STATE = {
     isLoggedIn: false,
     token:null,
-    user:null
+    user:null,
+    login:{
+        username: '',
+        password: '',
+        showPassword: false,
+    }
 };
 
 const reducer = {
@@ -9,7 +14,8 @@ const reducer = {
         ...state,
         token: payload.token,
         user: payload.user,
-        isLoggedIn: true
+        isLoggedIn: true,
+        login: null
     }),
 
     LOGIN_FAILURE: (state) => ({
@@ -18,6 +24,12 @@ const reducer = {
         user: null,
         isLoggedIn: false
     }),
+
+    LOGIN_FORM: (state, {login}) => ({
+        ...state,
+        login: login,
+    })
+
 }
 
 export default (state = DEFAULT_STATE, action) =>

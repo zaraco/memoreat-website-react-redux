@@ -18,7 +18,9 @@
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
     "redux-api-middleware": "^3.2.1",
-    "redux-history": "^1.0.2"
+    "redux-history": "^1.0.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
