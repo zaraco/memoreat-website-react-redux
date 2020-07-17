@@ -16,6 +16,7 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import useAuth from "../../hooks/auth";
 import Button from "@material-ui/core/Button";
+import useMain from "../../hooks/main";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -30,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Login() {
     const classes = useStyles();
     const {login, authLoginForm, fetchAuthLogin} = useAuth();
-
+    const {app_token} = useMain();
 
     const handleChangeUsername = (e) => {
         authLoginForm({
@@ -62,7 +63,7 @@ export default function Login() {
         event.preventDefault();
         fetchAuthLogin({
             app_id: process.env.REACT_APP_APP_ID,
-            app_token:"",
+            app_token: app_token,
             username: login.username,
             password: login.password
         })
@@ -107,10 +108,10 @@ export default function Login() {
 
                     </Grid>
                     <Grid item sm={12} md={4}>
-                    <Button variant="contained" color="secondary" onClick={handleClickButton}>
-                        Secondary
-                    </Button>
-                </Grid>
+                        <Button variant="contained" color="secondary" onClick={handleClickButton}>
+                            Secondary
+                        </Button>
+                    </Grid>
                 </Grid>
             </Container>
         </div>

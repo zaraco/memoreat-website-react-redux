@@ -11,7 +11,7 @@ export const fetchLogin = (payload) => {
         endpoint: () => API_URL+API_ENDPOINTS.auth.login,
         method: 'POST',
         headers: API_HEADER,
-        body: JSON.stringify(payload)
+        body: JSON.stringify({...payload, app_id: APP_ID})
     });
 };
 export const fetchRegister = (payload) => {
@@ -20,7 +20,7 @@ export const fetchRegister = (payload) => {
         endpoint: () => API_URL+API_ENDPOINTS.auth.register,
         method: 'POST',
         headers: API_HEADER,
-        body: JSON.stringify(payload)
+        body: JSON.stringify({...payload, app_id: APP_ID})
     });
 
 };
@@ -53,7 +53,7 @@ export const fetchSetsOne = (payload) => {
         endpoint: () => API_URL+API_ENDPOINTS.sets.one,
         method: 'POST',
         headers: API_HEADER,
-        body: JSON.stringify(payload)
+        body: JSON.stringify({...payload, app_id: APP_ID})
 
 
     });
@@ -65,7 +65,7 @@ export const fetchSetsCreate = (payload) => {
         endpoint: () => API_URL+API_ENDPOINTS.sets.create,
         method: 'POST',
         headers: API_HEADER,
-        body: JSON.stringify(payload)
+        body: JSON.stringify({...payload, app_id: APP_ID})
 
 
     });
@@ -77,7 +77,7 @@ export const fetchSetsEdit = (payload) => {
         endpoint: () => API_URL+API_ENDPOINTS.sets.edit,
         method: 'POST',
         headers: API_HEADER,
-        body: JSON.stringify(payload)
+        body: JSON.stringify({...payload, app_id: APP_ID})
 
 
     });
@@ -91,7 +91,7 @@ export const fetchCardsAll = (payload) => {
         endpoint: () => API_URL+API_ENDPOINTS.cards.all,
         method: 'POST',
         headers: API_HEADER,
-        body: JSON.stringify(payload)
+        body: JSON.stringify({...payload, app_id: APP_ID})
 
 
     });
@@ -103,7 +103,7 @@ export const fetchCardsCreate = (payload) => {
         endpoint: () => API_URL+API_ENDPOINTS.cards.create,
         method: 'POST',
         headers: API_HEADER,
-        body: JSON.stringify(payload)
+        body: JSON.stringify({...payload, app_id: APP_ID})
 
 
     });
@@ -115,7 +115,7 @@ export const fetchCardsEdit = (payload) => {
         endpoint: () => API_URL+API_ENDPOINTS.cards.edit,
         method: 'POST',
         headers: API_HEADER,
-        body: JSON.stringify(payload)
+        body: JSON.stringify({...payload, app_id: APP_ID})
 
 
     });
@@ -129,7 +129,7 @@ export const fetchExamEnter = (payload) => {
         endpoint: () => API_URL+API_ENDPOINTS.exam.enter,
         method: 'POST',
         headers: API_HEADER,
-        body: JSON.stringify(payload)
+        body: JSON.stringify({...payload, app_id: APP_ID})
 
 
     });
@@ -141,9 +141,23 @@ export const fetchExam = (payload) => {
         endpoint: () => API_URL+API_ENDPOINTS.exam.exam,
         method: 'POST',
         headers: API_HEADER,
-        body: JSON.stringify(payload)
+        body: JSON.stringify({...payload, app_id: APP_ID})
 
 
     });
 };
+
+//main
+
+export const fetchIndex = (payload) => {
+    return createAction({
+        types: ['INDEX_REQUEST', 'INDEX_SUCCESS', 'INDEX_FAILURE'],
+        endpoint: () => API_URL+API_ENDPOINTS.main.index,
+        method: 'POST',
+        headers: API_HEADER,
+        body: JSON.stringify({...payload, app_id: APP_ID})
+    });
+};
+
+
 

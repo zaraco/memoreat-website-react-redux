@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
 import {Switch, Route} from "react-router";
 import {BrowserRouter as Router} from "react-router-dom";
@@ -27,6 +27,7 @@ import TopBar from "./components/base/TopBar";
 import Sidebar from "./components/base/Sidebar";
 import { ConnectedRouter } from 'connected-react-router';
 import { history } from './redux/store';
+import {fetchIndex} from "./redux/action/action";
 
 
 
@@ -69,6 +70,11 @@ const App = (props) => {
     const classes = useStyles();
     const theme = useTheme();
     const [mobileOpen, setMobileOpen] = React.useState(false);
+
+    useEffect(() => {
+        fetchIndex();
+    }, []);
+
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);

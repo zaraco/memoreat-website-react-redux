@@ -26,6 +26,9 @@ export const API_ENDPOINTS = {
         exam: {
             enter: `/set/exam/enter`,
             exam: `/set/exam`
+        },
+        main: {
+            index: ""
         }
 
     };

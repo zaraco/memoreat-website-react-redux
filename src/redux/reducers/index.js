@@ -5,6 +5,7 @@ import auth from "./auth";
 import cards from "./cards";
 import sets from "./sets";
 import users from "./users";
+import main from "./main";
 
 
 export default (history) =>
@@ -15,4 +16,5 @@ export default (history) =>
         cards,
         sets,
         users,
+        main,
     });
