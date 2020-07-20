@@ -1,13 +1,23 @@
 const DEFAULT_STATE = {
     isLoggedIn: false,
-    token:null,
-    user:null,
-    login:{
+    token: null,
+    user: null,
+    login: {
         username: '',
         password: '',
         showPassword: false,
     },
-    error: null
+    error: null,
+    register: {
+        email: '',
+        username: '',
+        password: '',
+        confirmPassword: '',
+        showPassword: false,
+        address: '',
+        gender: true
+    },
+
 };
 
 const reducer = {
@@ -17,7 +27,8 @@ const reducer = {
         user: payload.user,
         isLoggedIn: true,
         login: null,
-        error:null
+        error: null,
+        register: null
     }),
 
     LOGIN_FAILURE: (state) => ({
@@ -25,15 +36,39 @@ const reducer = {
         token: null,
         user: null,
         isLoggedIn: false,
-        error: "wrong"
+        error: "wrong",
+
     }),
 
     LOGIN_FORM: (state, {login}) => ({
         ...state,
         login: login,
-    })
+    }),
 
-}
+
+    REGISTER_SUCCESS: (state, {payload}) => ({
+        ...state,
+        token: payload.token,
+        user: payload.user,
+        error: null,
+        register: null
+    }),
+
+    REGISTER_FAILURE: (state) => ({
+        ...state,
+        token: null,
+        user: null,
+        error: "wrong",
+
+    }),
+
+    REGISTER_FORM: (state, {register}) => ({
+        ...state,
+        register: register,
+    }),
+
+};
+
 
 export default (state = DEFAULT_STATE, action) =>
     !action || typeof reducer[action.type] === 'undefined'

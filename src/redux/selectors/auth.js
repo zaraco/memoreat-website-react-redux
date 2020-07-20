@@ -6,5 +6,6 @@ export const authSelectors = {
     token: (state) => state.auth.token,
     login: (state) => state.auth.login,
     error: (state) => state.auth.error,
+    register: (state) => state.auth.register,
 
 };

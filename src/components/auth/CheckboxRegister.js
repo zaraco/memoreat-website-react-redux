@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Grid from "@material-ui/core/Grid";
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
@@ -6,8 +6,9 @@ import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import {makeStyles} from "@material-ui/core/styles";
-
-
+import useAuth from "../../hooks/auth";
+import {useDispatch} from "react-redux";
+import {fetchIndex} from "../../redux/action/action";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -22,14 +23,23 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CheckboxRegister() {
     const classes = useStyles();
-    const [state, setState] = React.useState({
-        gilad: true,
-        jason: false,
-    });
-    const {gilad, jason} = state;
 
-    const handleChange = (event) => {
-        setState({...state, [event.target.name]: event.target.checked});
+
+    const {register, authRegisterForm} = useAuth();
+
+    const handleChangeMale = (e) => {
+        authRegisterForm({
+            ...register,
+            gender: false
+        })
+    };
+
+    const handleChangeFemale = (e) => {
+        authRegisterForm({
+            ...register,
+            gender: true
+
+        })
     };
 
     return (
@@ -40,11 +50,11 @@ export default function CheckboxRegister() {
                         <FormLabel component="legend">Gender</FormLabel>
                         <FormGroup>
                             <FormControlLabel
-                                control={<Checkbox checked={gilad} onChange={handleChange} name="gilad"/>}
+                                control={<Checkbox checked={!register.gender === true ? register.gender : ''} onChange={handleChangeMale} name="Male"/>}
                                 label="Male"
                             />
                             <FormControlLabel
-                                control={<Checkbox checked={jason} onChange={handleChange} name="jason"/>}
+                                control={<Checkbox checked={!register.gender === false ? register.gender : ''} onChange={handleChangeFemale} name="Female"/>}
                                 label="Female"
                             />
                         </FormGroup>

@@ -32,6 +32,13 @@ export const loginForm = (login) => (dispatch) => {
     });
 };
 
+export const registerForm = (register) => (dispatch) => {
+    return dispatch({
+        type: 'REGISTER_FORM',
+        register
+    });
+};
+
 
 
 //sets

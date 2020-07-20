@@ -32,10 +32,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Register() {
+
     const classes = useStyles();
 
-
-    const {login, authLoginForm, fetchAuthLogin, error} = useAuth();
+    const {register, authRegisterForm, fetchAuthRegister, error} = useAuth();
     const {app_token} = useMain();
     const dispatch = useDispatch();
 
@@ -43,30 +43,67 @@ export default function Register() {
         dispatch(fetchIndex({}))
     }, []);
 
+
+    const handleChangeEmail = (e) => {
+        authRegisterForm({
+            ...register,
+            email: e.target.value
+        })
+    };
+
+
     const handleChangeUsername = (e) => {
-        authLoginForm({
-            ...login,
+        authRegisterForm({
+            ...register,
             username: e.target.value
         })
     };
 
+
     const handleChangePassword = (e) => {
-        authLoginForm({
-            ...login,
+        authRegisterForm({
+            ...register,
             password: e.target.value,
         })
     };
 
     const handleClickShowPassword = (e) => {
         e.preventDefault();
-        authLoginForm({
-            ...login,
-            showPassword: (login) ? !login.showPassword : true
+        authRegisterForm({
+            ...register,
+            showPassword: (register) ? !register.showPassword : true
         })
     };
 
+
+    const handleClickShowPassword2 = (e) => {
+        e.preventDefault();
+        authRegisterForm({
+            ...register,
+            showPassword: (register) ? !register.showPassword : true
+        })
+    };
+    const handleChangeConfirmPassword = (e) => {
+        authRegisterForm({
+            ...register,
+            confirmPassword: e.target.value,
+        })
+    };
+
+
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
+    };
+
+    const handleMouseDownPassword2 = (event) => {
+        event.preventDefault();
+    };
+
+    const handleChangeAddress = (e) => {
+        authRegisterForm({
+            ...register,
+            address: e.target.value
+        })
     };
 
     const handleClickButton = (event) => {
@@ -74,14 +111,22 @@ export default function Register() {
         console.log({
             app_id: process.env.REACT_APP_APP_ID,
             app_token: app_token,
-            username: login.username,
-            password: login.password
+            email: register.username,
+            username: register.username,
+            password: register.password,
+            confirmPassword: register.confirmPassword,
+            address: register.address,
+            gender: register.gender
         })
-        fetchAuthLogin({
+
+        fetchAuthRegister({
             app_id: process.env.REACT_APP_APP_ID,
             app_token: app_token,
-            username: login.username,
-            password: login.password
+            username: register.username,
+            password: register.password,
+            confirmPassword: register.confirmPassword,
+            address: register.address,
+            gender: register.gender
         })
     }
 
@@ -95,8 +140,8 @@ export default function Register() {
                                    id="outlined-basic"
                                    label="Email"
                                    variant="outlined"
-                                   onChange={handleChangeUsername}
-                            //value={login ? login.username : ""}
+                                   onChange={handleChangeEmail}
+                                   value={register ? register.email : ""}
                         />
                     </Grid>
 
@@ -106,85 +151,86 @@ export default function Register() {
                                    label="Username"
                                    variant="outlined"
                                    onChange={handleChangeUsername}
-                            //value={login ? login.username : ""}
+                                   value={register ? register.username : ""}
                         />
                     </Grid>
                 </Grid>
 
-                    <Grid container spacing={2}>
-                        <Grid item sm={12} md={4}>
-                            <FormControl className={clsx(classes.margin, classes.textField)} variant="outlined">
-                                <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
-                                <OutlinedInput
-                                    id="outlined-adornment-password"
-                                    //type={login && login.showPassword ? 'text' : 'password'}
-                                    // value={login ? login.password : ""}
-                                    onChange={handleChangePassword}
-                                    endAdornment={
-                                        <InputAdornment position="end">
-                                            <IconButton
-                                                aria-label="toggle password visibility"
-                                                //  onClick={handleClickShowPassword}
-                                                //  onMouseDown={handleMouseDownPassword}
-                                                edge="end"
-                                            >
-                                                {login && login.showPassword ? <Visibility/> : <VisibilityOff/>}
-                                            </IconButton>
-                                        </InputAdornment>
-                                    }
-                                    labelWidth={70}
-                                />
-                            </FormControl>
-
-                        </Grid>
-
-                        <Grid item sm={12} md={4}>
-                            <FormControl className={clsx(classes.margin, classes.textField)} variant="outlined">
-                                <InputLabel htmlFor="outlined-adornment-password">Password Confirmation</InputLabel>
-                                <OutlinedInput
-                                    id="outlined-adornment-password"
-                                    //type={login && login.showPassword ? 'text' : 'password'}
-                                    // value={login ? login.password : ""}
-                                    onChange={handleChangePassword}
-                                    endAdornment={
-                                        <InputAdornment position="end">
-                                            <IconButton
-                                                aria-label="toggle password visibility"
-                                                //  onClick={handleClickShowPassword}
-                                                //  onMouseDown={handleMouseDownPassword}
-                                                edge="end"
-                                            >
-                                                {login && login.showPassword ? <Visibility/> : <VisibilityOff/>}
-                                            </IconButton>
-                                        </InputAdornment>
-                                    }
-                                    labelWidth={170}
-                                />
-                            </FormControl>
-                        </Grid>
-                    </Grid>
-
-                    <Grid container spacing={2}>
-                        <Grid item sm={12} md={8}>
-                            <TextField className={clsx(classes.margin, classes.textField)}
-                                       id="outlined-basic"
-                                       label="Address"
-                                       variant="outlined"
-                                       onChange={handleChangeUsername}
-                                //value={login ? login.username : ""}
+                <Grid container spacing={2}>
+                    <Grid item sm={12} md={4}>
+                        <FormControl className={clsx(classes.margin, classes.textField)} variant="outlined">
+                            <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+                            <OutlinedInput
+                                id="outlined-adornment-password"
+                                type={register && register.showPassword ? 'text' : 'password'}
+                                value={register ? register.password : ""}
+                                onChange={handleChangePassword}
+                                endAdornment={
+                                    <InputAdornment position="end">
+                                        <IconButton
+                                            aria-label="toggle password visibility"
+                                            onClick={handleClickShowPassword}
+                                            onMouseDown={handleMouseDownPassword}
+                                            edge="end"
+                                        >
+                                            {register && register.showPassword ? <Visibility/> : <VisibilityOff/>}
+                                        </IconButton>
+                                    </InputAdornment>
+                                }
+                                labelWidth={70}
                             />
-                        </Grid>
+                        </FormControl>
+
                     </Grid>
 
-                    <CheckboxRegister/>
-
-                    <Grid container spacing={2}>
-                        <Grid item sm={12} md={4}>
-                            <Button variant="contained" color="secondary" onClick={handleClickButton}>
-                                Submit
-                            </Button>
-                        </Grid>
+                    <Grid item sm={12} md={4}>
+                        <FormControl className={clsx(classes.margin, classes.textField)} variant="outlined">
+                            <InputLabel htmlFor="outlined-adornment-password">Password Confirmation</InputLabel>
+                            <OutlinedInput
+                                id="outlined-adornment-password"
+                                type={register && register.showPassword ? 'text' : 'password'}
+                                value={register ? register.confirmPassword : ""}
+                                onChange={handleChangeConfirmPassword}
+                                endAdornment={
+                                    <InputAdornment position="end">
+                                        <IconButton
+                                            aria-label="toggle password visibility"
+                                            onClick={handleClickShowPassword2}
+                                            onMouseDown={handleMouseDownPassword2}
+                                            edge="end"
+                                        >
+                                            {register && register.showPassword ? <Visibility/> : <VisibilityOff/>}
+                                        </IconButton>
+                                    </InputAdornment>
+                                }
+                                labelWidth={170}
+                            />
+                        </FormControl>
                     </Grid>
+                </Grid>
+
+                <Grid container spacing={2}>
+                    <Grid item sm={12} md={8}>
+                        <TextField className={clsx(classes.margin, classes.textField)}
+                                   id="outlined-basic"
+                                   label="Address"
+                                   variant="outlined"
+                                   onChange={handleChangeAddress}
+                                   value={register ? register.address : ""}
+                        />
+                    </Grid>
+                </Grid>
+
+                <CheckboxRegister/>
+
+
+                <Grid container spacing={2}>
+                    <Grid item sm={12} md={4}>
+                        <Button variant="contained" color="secondary" onClick={handleClickButton}>
+                            Submit
+                        </Button>
+                    </Grid>
+                </Grid>
 
             </Container>
         </div>
