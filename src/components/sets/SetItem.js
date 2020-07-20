@@ -42,6 +42,9 @@ const useStyles = makeStyles((theme) => ({
     avatar: {
         backgroundColor: red[500],
     },
+    badge: {
+        marginLeft: '300px'
+    }
 }));
 
 const defaultProps = {
@@ -71,16 +74,17 @@ const SetItem = (props) => {
                 />
             <CardMedia
                 className={classes.media}
-                image={set.picture}
+                image='/images/flash-card.png'
                 title="Paella dish"
             />
             <CardContent>
                 <Typography variant="body2" color="textSecondary" component="p">
                     {set.description}
+                    {set.language1}
                 </Typography>
 
                 <div>
-                    <Badge anchorOrigin={{vertical: 'top', horizontal: 'right',}} badgeContent={1000} max={set.downloads} {...defaultProps} />
+                    <Badge className={classes.badge} anchorOrigin={{vertical: 'top', horizontal: 'right',}} badgeContent={3000} max={set.downloads} {...defaultProps} />
 
                 </div>
 
