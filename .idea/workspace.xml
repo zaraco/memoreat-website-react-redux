@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="53068fc9-011a-4179-9c54-57f191c8a013" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/CheckboxRegister.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/CheckboxRegister.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sets/SetItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sets/SetItem.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +81,7 @@
       <workItem from="1594826831283" duration="3250000" />
       <workItem from="1594887807389" duration="21980000" />
       <workItem from="1594974241982" duration="3746000" />
-      <workItem from="1595230305161" duration="17589000" />
+      <workItem from="1595230305161" duration="19445000" />
     </task>
     <servers />
   </component>

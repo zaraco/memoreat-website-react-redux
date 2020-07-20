@@ -138,7 +138,7 @@ export default function Register() {
                     <Grid item sm={12} md={4}>
                         <TextField className={clsx(classes.margin, classes.textField)}
                                    id="outlined-basic"
-                                   label="Email"
+                                   label="Email Address"
                                    variant="outlined"
                                    onChange={handleChangeEmail}
                                    value={register ? register.email : ""}

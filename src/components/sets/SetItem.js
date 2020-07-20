@@ -15,6 +15,11 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import Badge from "@material-ui/core/Badge";
+import MailIcon from '@material-ui/icons/Mail';
+
+
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -39,31 +44,31 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+const defaultProps = {
+    color: 'secondary',
+    children: <MailIcon />,
+};
+
 const SetItem = (props) => {
     const set = props.set;
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
 
-    const handleExpandClick = () => {
-        setExpanded(!expanded);
-    };
+
 
     return (
         <Card className={classes.root}>
             <CardHeader
                 avatar={
                     <Avatar aria-label="recipe" className={classes.avatar}>
-                        R
+                        ZT
                     </Avatar>
                 }
-                action={
-                    <IconButton aria-label="settings">
-                        <MoreVertIcon />
-                    </IconButton>
-                }
+
                 title={set.name}
                 subheader={set.user ? set.user.fullName : null}
-            />
+
+                />
             <CardMedia
                 className={classes.media}
                 image={set.picture}
@@ -73,6 +78,12 @@ const SetItem = (props) => {
                 <Typography variant="body2" color="textSecondary" component="p">
                     {set.description}
                 </Typography>
+
+                <div>
+                    <Badge anchorOrigin={{vertical: 'top', horizontal: 'right',}} badgeContent={1000} max={set.downloads} {...defaultProps} />
+
+                </div>
+
             </CardContent>
             <CardActions disableSpacing>
                 <IconButton aria-label="add to favorites">
