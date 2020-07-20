@@ -30,14 +30,14 @@ export default function CheckboxRegister() {
     const handleChangeMale = (e) => {
         authRegisterForm({
             ...register,
-            gender: false
+            gender: true
         })
     };
 
     const handleChangeFemale = (e) => {
         authRegisterForm({
             ...register,
-            gender: true
+            gender: false
 
         })
     };
@@ -50,11 +50,11 @@ export default function CheckboxRegister() {
                         <FormLabel component="legend">Gender</FormLabel>
                         <FormGroup>
                             <FormControlLabel
-                                control={<Checkbox checked={!register.gender === true ? register.gender : ''} onChange={handleChangeMale} name="Male"/>}
+                                control={<Checkbox checked={register.gender === true} onChange={handleChangeMale} name="Male"/>}
                                 label="Male"
                             />
                             <FormControlLabel
-                                control={<Checkbox checked={!register.gender === false ? register.gender : ''} onChange={handleChangeFemale} name="Female"/>}
+                                control={<Checkbox checked={register.gender === false} onChange={handleChangeFemale} name="Female"/>}
                                 label="Female"
                             />
                         </FormGroup>
