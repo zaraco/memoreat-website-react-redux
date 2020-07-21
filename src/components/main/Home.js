@@ -7,13 +7,7 @@ import Container from "@material-ui/core/Container";
 
 
 const Home = () => {
-    const {fetchSets, sets} = useSets();
 
-    useEffect(() => {
-        fetchSets();
-    }, [])
-
-    //console.log(sets)
 
     return (
         <>
@@ -26,16 +20,6 @@ const Home = () => {
                     </Grid>
                 </Grid>
             </div>
-            <Container>
-                <Grid container>
-                    {(sets) ? sets.map((item) => (
-                        <Grid item xs={12} md={4}>
-                            <SetItem key={item.id} set={item}/>
-                        </Grid>
-                    )) : null}
-                </Grid>
-
-            </Container>
         </>
     )
 };

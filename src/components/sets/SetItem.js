@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 //import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -10,15 +10,14 @@ import Collapse from '@material-ui/core/Collapse';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import { red } from '@material-ui/core/colors';
+import {red} from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Badge from "@material-ui/core/Badge";
 import MailIcon from '@material-ui/icons/Mail';
-
-
+import Link from "@material-ui/core/Link";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -49,55 +48,55 @@ const useStyles = makeStyles((theme) => ({
 
 const defaultProps = {
     color: 'secondary',
-    children: <MailIcon />,
+    children: <MailIcon/>,
 };
 
 const SetItem = (props) => {
     const set = props.set;
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
-
+    const preventDefault = (event) => event.preventDefault();
 
 
     return (
-        <Card className={classes.root}>
-            <CardHeader
-                avatar={
-                    <Avatar aria-label="recipe" className={classes.avatar}>
-                        ZT
-                    </Avatar>
-                }
+        (set) ?
+            <Link to={`/set/${set.id}`} className="set-link" onClick={preventDefault}>
+                <Card className={classes.root}>
+                    <CardHeader
+                        avatar={
+                            <Avatar aria-label="recipe" className={classes.avatar}>
+                                ZT
+                            </Avatar>
+                        }
 
-                title={set.name}
-                subheader={set.user ? set.user.fullName : null}
+                        title={set.name}
+                        subheader={set.user ? set.user.fullName : null}
+                    />
+                    <CardMedia
+                        className={classes.media}
+                        image='/images/flash-card.png'
+                        title="Paella dish"
+                    />
+                    <CardContent>
+                        <Typography variant="body2" color="textSecondary" component="p">
+                            {set.description}
+                            {set.language1}
+                        </Typography>
 
-                />
-            <CardMedia
-                className={classes.media}
-                image='/images/flash-card.png'
-                title="Paella dish"
-            />
-            <CardContent>
-                <Typography variant="body2" color="textSecondary" component="p">
-                    {set.description}
-                    {set.language1}
-                </Typography>
+                    </CardContent>
 
-                <div>
-                    <Badge className={classes.badge} anchorOrigin={{vertical: 'top', horizontal: 'right',}} badgeContent={3000} max={set.downloads} {...defaultProps} />
+                    <CardActions disableSpacing>
+                        <Badge badgeContent={4} color="secondary" badgeContent={3000}
+                               max={set.downloads} {...defaultProps}>
+                            <MailIcon/>
+                        </Badge>
+                        <IconButton aria-label="share">
+                            <ShareIcon/>
+                        </IconButton>
+                    </CardActions>
 
-                </div>
-
-            </CardContent>
-            <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                    <FavoriteIcon />
-                </IconButton>
-                <IconButton aria-label="share">
-                    <ShareIcon />
-                </IconButton>
-            </CardActions>
-        </Card>
+                </Card>
+            </Link> : null
     );
 };
 

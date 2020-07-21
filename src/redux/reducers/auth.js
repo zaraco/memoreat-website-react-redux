@@ -15,7 +15,7 @@ const DEFAULT_STATE = {
         confirmPassword: '',
         showPassword: false,
         address: '',
-        gender: true
+        gender: 0
     },
 
 };
@@ -50,6 +50,7 @@ const reducer = {
         ...state,
         token: payload.token,
         user: payload.user,
+        isLoggedIn: true,
         error: null,
         register: null
     }),
@@ -58,6 +59,7 @@ const reducer = {
         ...state,
         token: null,
         user: null,
+        isLoggedIn: false,
         error: "wrong",
 
     }),

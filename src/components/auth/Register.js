@@ -122,9 +122,9 @@ export default function Register() {
         fetchAuthRegister({
             app_id: process.env.REACT_APP_APP_ID,
             app_token: app_token,
+            email: register.email,
             username: register.username,
             password: register.password,
-            confirmPassword: register.confirmPassword,
             address: register.address,
             gender: register.gender
         })
