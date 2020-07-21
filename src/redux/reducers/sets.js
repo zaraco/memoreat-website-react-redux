@@ -10,6 +10,12 @@ const reducer = {
         sets: payload.sets,
     }),
 
+    SETS_ONE_SUCCESS: (state, {payload}) => ({
+        ...state,
+        set: payload.set,
+    }),
+
+
 };
 
 export default (state = DEFAULT_STATE, action) =>

@@ -55,12 +55,11 @@ const SetItem = (props) => {
     const set = props.set;
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
-    const preventDefault = (event) => event.preventDefault();
 
 
     return (
         (set) ?
-            <Link to={`/set/${set.id}`} className="set-link" onClick={preventDefault}>
+            <Link to={`/set/${set.id}`} className="set-link" >
                 <Card className={classes.root}>
                     <CardHeader
                         avatar={
