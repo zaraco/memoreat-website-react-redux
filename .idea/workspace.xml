@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="53068fc9-011a-4179-9c54-57f191c8a013" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sets/CreateSet.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sets/CreateSet.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/selectors/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/selectors/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/base/SidebarList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/base/SidebarList.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +84,7 @@
       <workItem from="1595275846015" duration="1164000" />
       <workItem from="1595315957640" duration="15919000" />
       <workItem from="1595405022943" duration="4471000" />
-      <workItem from="1595412911707" duration="9244000" />
+      <workItem from="1595412911707" duration="9700000" />
     </task>
     <servers />
   </component>
