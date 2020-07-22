@@ -1,6 +1,7 @@
 const DEFAULT_STATE = {
     sets:[],
     set: null,
+    my: []
 
 };
 
@@ -13,6 +14,11 @@ const reducer = {
     SETS_ONE_SUCCESS: (state, {payload}) => ({
         ...state,
         set: payload.set,
+    }),
+
+    SETS_MY_SUCCESS: (state, {payload}) => ({
+        ...state,
+        my: payload.my,
     }),
 
 

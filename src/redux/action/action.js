@@ -66,6 +66,20 @@ export const fetchSetsOne = (payload) => {
     });
 };
 
+export const fetchMySets = (payload) => {
+    return createAction({
+        types: ['SETS_MY_REQUEST', 'SETS_MY_SUCCESS', 'SETS_MY_FAILURE'],
+        endpoint: () => API_URL+API_ENDPOINTS.sets.my,
+        method: 'POST',
+        headers: API_HEADER,
+        body: JSON.stringify({...payload, app_id: APP_ID})
+
+
+    });
+};
+
+
+
 export const fetchSetsCreate = (payload) => {
     return createAction({
         types: ['SETS_CREATE_REQUEST', 'SETS_CREATE_SUCCESS', 'SETS_CREATE_FAILURE'],

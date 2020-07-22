@@ -12,6 +12,7 @@ export const API_ENDPOINTS = {
         sets: {
             all: `/sets`,
             one: `/set`,
+            my:'/sets/my',
             create: ``,
             edit: ``
         }

@@ -14,6 +14,7 @@ import Container from "@material-ui/core/Container";
 import Cards from "../cards/Cards";
 import useCards from "../../hooks/cards";
 import {useDispatch} from "react-redux";
+import useAuth from "../../hooks/auth";
 
 
 const useStyles = makeStyles({
@@ -34,19 +35,22 @@ const Set = (props) => {
 
     const {fetchSet, set} = useSets();
     const {fetchCards, cards, cardsSideChange} = useCards();
+    const {token} = useAuth();
+
 
 
     useEffect(() => {
         fetchSet(
             {
-                set_id:
-                props.match.params.id
+                set_id: props.match.params.id,
+                token: token
             });
 
         fetchCards(
             {
-                set_id:
-                props.match.params.id
+                set_id: props.match.params.id,
+                token: token
+
             });
 
         cardsSideChange(true)
