@@ -31,10 +31,23 @@ const Cards = (props) => {
         cardsSideChange(!isFront)
     }
 
+    const nextHandler = () => {
+        cardsSideChange(true)
+
+    }
+
+    const prevHandler = () => {
+        cardsSideChange(true)
+
+    }
+
 
     return (
         <>
-            <Carousel autoPlay={false} animation={'slide'} navButtonsAlwaysVisible={true} indicators={false}>
+            <Carousel autoPlay={false} animation={'slide'} navButtonsAlwaysVisible={true} indicators={false}
+                      next={nextHandler}
+                      prev={prevHandler}
+            >
                 {(cards) ? cards.map((item) => (
                         <Card className={classes.root} onClick={clickHandlerCard}>
                             <CardContent>
