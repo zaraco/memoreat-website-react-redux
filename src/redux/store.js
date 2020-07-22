@@ -1,4 +1,6 @@
 import {createStore, applyMiddleware, compose} from 'redux';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 import { apiMiddleware } from 'redux-api-middleware';
 import reducers from './reducers';
 import {createBrowserHistory} from "history";
@@ -14,7 +16,16 @@ const devTools = window.__REDUX_DEVTOOLS_EXTENSION__
     })
     : (f) => f;
 
+
+const persistConfig = {
+    key: 'root',
+    storage,
+}
+
 export const history = createBrowserHistory();
+
+const persistedReducer = persistReducer(persistConfig, reducers(history));
+
 
 const logger = createLogger({
     collapsed: true,
@@ -27,8 +38,15 @@ export default function initStore() {
         routerMiddleware(history),
         logger
     ];
-    return createStore(
-        reducers(history),
+
+    let store = createStore(
+        persistedReducer,
         compose(applyMiddleware(...middlewares), devTools),
     );
+
+    let persistor = persistStore(store)
+
+    return {
+        store, persistor
+    }
 };
