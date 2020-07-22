@@ -1,7 +1,15 @@
 const DEFAULT_STATE = {
     sets:[],
     set: null,
-    my: []
+    my: [],
+    createForm: {
+        name: '',
+        language1: '',
+        language2: '',
+        description: '',
+        category: []
+
+    }
 
 };
 
@@ -19,6 +27,11 @@ const reducer = {
     SETS_MY_SUCCESS: (state, {payload}) => ({
         ...state,
         my: payload.my,
+    }),
+
+    SETS_CREATE_FORM: (state, {createForm}) => ({
+        ...state,
+        createForm: createForm,
     }),
 
 

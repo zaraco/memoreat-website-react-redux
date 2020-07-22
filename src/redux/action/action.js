@@ -78,7 +78,12 @@ export const fetchMySets = (payload) => {
     });
 };
 
-
+export const createSetForm = (createForm) => (dispatch) => {
+    return dispatch({
+        type: 'SETS_CREATE_FORM',
+        createForm
+    });
+};
 
 export const fetchSetsCreate = (payload) => {
     return createAction({
