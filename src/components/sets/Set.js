@@ -13,6 +13,7 @@ import SetItem from "./SetItem";
 import Container from "@material-ui/core/Container";
 import Cards from "../cards/Cards";
 import useCards from "../../hooks/cards";
+import {useDispatch} from "react-redux";
 
 
 const useStyles = makeStyles({
@@ -32,6 +33,8 @@ const Set = (props) => {
     const classes = useStyles();
 
     const {fetchSet, set} = useSets();
+    const {fetchCards, cards, cardsSideChange} = useCards();
+
 
     useEffect(() => {
         fetchSet(
@@ -39,22 +42,20 @@ const Set = (props) => {
                 set_id:
                 props.match.params.id
             });
-    }, [])
 
-    console.log(set)
-
-    const {fetchCards, cards} = useCards();
-
-    useEffect(() => {
         fetchCards(
             {
                 set_id:
                 props.match.params.id
             });
+
+        cardsSideChange(true)
+
     }, [])
 
-    console.log(cards)
 
+    //console.log(set)
+   // console.log(cards)
 
     return (
         <>
@@ -87,7 +88,11 @@ const Set = (props) => {
                     </Card>
                 </Grid>
             </Grid>
-            <Cards cards={cards}/>
+            <Grid container>
+                <Grid item xs={12} md={8}>
+                    <Cards cards={cards}/>
+                </Grid>
+            </Grid>
 
 
         </>

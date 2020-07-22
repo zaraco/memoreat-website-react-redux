@@ -104,6 +104,13 @@ export const fetchCardsAll = (payload) => {
     });
 };
 
+export const cardSide = (isFront) => (dispatch) => {
+    return dispatch({
+        type: 'CARDS_SIDE_CHANGE',
+        isFront
+    });
+};
+
 export const fetchCardsCreate = (payload) => {
     return createAction({
         types: ['CARDS_CREATE_REQUEST', 'CARDS_CREATE_SUCCESS', 'CARDS_CREATE_FAILURE'],

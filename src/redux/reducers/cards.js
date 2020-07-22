@@ -1,6 +1,7 @@
 const DEFAULT_STATE = {
     cards: [],
     card: null,
+    isFront: true
 
 };
 
@@ -10,6 +11,12 @@ const reducer = {
         ...state,
         cards: payload.cards,
     }),
+
+    CARDS_SIDE_CHANGE: (state, {isFront}) => ({
+        ...state,
+        isFront: isFront,
+    }),
+
 
 
 

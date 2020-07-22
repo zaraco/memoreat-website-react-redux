@@ -3,14 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="53068fc9-011a-4179-9c54-57f191c8a013" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/cards/Cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cards/Cards.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/sets/Set.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sets/Set.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sets/SetItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sets/SetItem.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hooks/cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/cards.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/action.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/reducers/cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/cards.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/selectors/cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/selectors/cards.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +48,7 @@
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -92,7 +91,7 @@
       <workItem from="1595275846015" duration="1164000" />
       <workItem from="1595315957640" duration="15919000" />
       <workItem from="1595405022943" duration="4471000" />
-      <workItem from="1595412911707" duration="389000" />
+      <workItem from="1595412911707" duration="4753000" />
     </task>
     <servers />
   </component>
@@ -108,26 +107,30 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1594901196611" />
-    <state width="1419" height="220" key="GridCell.Tab.0.bottom" timestamp="1595405891502">
+    <state width="1419" height="220" key="GridCell.Tab.0.bottom" timestamp="1595414264951">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="220" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595405891502" />
+    <state width="1419" height="220" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595414264951" />
     <state width="1419" height="244" key="GridCell.Tab.0.bottom/0.23.1440.831@0.23.1440.831" timestamp="1594846838104" />
-    <state width="1419" height="220" key="GridCell.Tab.0.center" timestamp="1595405891499">
+    <state width="1419" height="220" key="GridCell.Tab.0.center" timestamp="1595414264948">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="220" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1595405891499" />
+    <state width="1419" height="220" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1595414264948" />
     <state width="1419" height="244" key="GridCell.Tab.0.center/0.23.1440.831@0.23.1440.831" timestamp="1594846838102" />
-    <state width="1419" height="220" key="GridCell.Tab.0.left" timestamp="1595405891496">
+    <state width="1419" height="220" key="GridCell.Tab.0.left" timestamp="1595414264942">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="220" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1595405891496" />
+    <state width="1419" height="220" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1595414264942" />
     <state width="1419" height="244" key="GridCell.Tab.0.left/0.23.1440.831@0.23.1440.831" timestamp="1594846838101" />
-    <state width="1419" height="220" key="GridCell.Tab.0.right" timestamp="1595405891500">
+    <state width="1419" height="220" key="GridCell.Tab.0.right" timestamp="1595414264950">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="220" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1595405891500" />
+    <state width="1419" height="220" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1595414264950" />
     <state width="1419" height="244" key="GridCell.Tab.0.right/0.23.1440.831@0.23.1440.831" timestamp="1594846838103" />
+    <state x="229" y="89" key="SettingsEditor" timestamp="1595414446854">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="229" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1595414446853" />
     <state x="155" y="38" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1594921638197">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

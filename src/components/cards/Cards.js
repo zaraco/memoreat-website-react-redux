@@ -1,47 +1,21 @@
 import React, {useEffect} from 'react';
-import {Link} from "react-router-dom";
+import {makeStyles} from "@material-ui/core/styles";
+import Carousel from 'react-material-ui-carousel'
+import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
-import CardHeader from "@material-ui/core/CardHeader";
-import Avatar from "@material-ui/core/Avatar";
-import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-import CardActions from "@material-ui/core/CardActions";
-import Badge from "@material-ui/core/Badge";
-import MailIcon from "@material-ui/icons/Mail";
-import IconButton from "@material-ui/core/IconButton";
-import ShareIcon from "@material-ui/icons/Share";
-import {makeStyles} from "@material-ui/core/styles";
-import {red} from "@material-ui/core/colors";
-import {AutoRotatingCarousel, Slide} from 'material-auto-rotating-carousel';
-
+import useCards from "../../hooks/cards";
+import {useDispatch} from "react-redux";
+import {fetchIndex} from "../../redux/action/action";
 
 
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        margin: '20px 20px',
+        height: '400px',
+        weight: '100%'
     },
-    media: {
-        height: 0,
-        paddingTop: '56.25%',
-    },
-    expand: {
-        transform: 'rotate(0deg)',
-        marginLeft: 'auto',
-        transition: theme.transitions.create('transform', {
-            duration: theme.transitions.duration.shortest,
-        }),
-    },
-    expandOpen: {
-        transform: 'rotate(180deg)',
-    },
-    avatar: {
-        backgroundColor: red[500],
-    },
-    badge: {
-        marginLeft: '300px'
-    }
 }));
 
 
@@ -49,29 +23,30 @@ const useStyles = makeStyles((theme) => ({
 
 const Cards = (props) => {
     const cards = props.cards;
+    const {isFront, cardsSideChange} = useCards();
     const classes = useStyles();
+
+    const clickHandlerCard = () => {
+        console.log(isFront)
+        cardsSideChange(!isFront)
+    }
 
 
     return (
         <>
+            <Carousel autoPlay={false} animation={'slide'} navButtonsAlwaysVisible={true} indicators={false}>
+                {(cards) ? cards.map((item) => (
+                        <Card className={classes.root} onClick={clickHandlerCard}>
+                            <CardContent>
+                                <Typography variant="body2" color="textSecondary" component="p">
+                                    {isFront ? item.side1 : item.side2}
+                                </Typography>
 
+                            </CardContent>
+                        </Card>
+                )) : null}
+            </Carousel>
 
-
-            {/*
-            {(cards) ? cards.map((item) => (
-                <Grid item xs={12} md={4}>
-                    <Card className={classes.root}>
-                        <CardContent>
-                            <Typography variant="body2" color="textSecondary" component="p">
-                                {item.side1}
-                                {item.side2}
-                            </Typography>
-
-                        </CardContent>
-                    </Card>
-                </Grid>
-            )) : null}
-*/}
         </>
     );
 
