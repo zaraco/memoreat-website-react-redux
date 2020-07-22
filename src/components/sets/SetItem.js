@@ -11,10 +11,7 @@ import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import {red} from '@material-ui/core/colors';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Badge from "@material-ui/core/Badge";
 import MailIcon from '@material-ui/icons/Mail';
 import {Link} from "react-router-dom";
@@ -54,7 +51,6 @@ const defaultProps = {
 const SetItem = (props) => {
     const set = props.set;
     const classes = useStyles();
-    const [expanded, setExpanded] = React.useState(false);
 
 
     return (

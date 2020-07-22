@@ -20,10 +20,6 @@ const useCards = () => {
         dispatch(fetchCardsAll(payload));
     },[]);
 
-    const fetchCard = useCallback((payload) => {
-        dispatch(fetchCardsCreate(payload));
-    },[]);
-
 
     const cardsCreate = useCallback((payload) => {
         dispatch(fetchCardsCreate(payload));
@@ -36,7 +32,7 @@ const useCards = () => {
 
 
 
-    return {cards, card, fetchCards, fetchCard, cardsCreate, cardsEdit };
+    return {cards, card, fetchCards, cardsCreate, cardsEdit };
 
 };
 

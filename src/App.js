@@ -110,7 +110,6 @@ const App = (props) => {
 
                         <Route path='/dashboard' component={Dashboard}/>
 
-                        <Route path='/sets/:id/cards' exact component={Cards}/>
                         <Route path='/sets/:id/cards/create' component={CreateCard}/>
                         <Route path='/cards/:id/edit' component={EditCard}/>
                     </Switch>

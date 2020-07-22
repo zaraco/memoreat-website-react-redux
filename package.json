@@ -9,6 +9,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "connected-react-router": "^6.8.0",
     "history": "^5.0.0",
     "react": "^16.13.1",
     "react-cookie": "^4.0.3",
@@ -17,10 +18,10 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "react-swipeable-views": "^0.13.9",
     "redux": "^4.0.5",
     "redux-api-middleware": "^3.2.1",
     "redux-history": "^1.0.2",
-    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
@@ -45,6 +46,6 @@
     ]
   },
   "devDependencies": {
-    "connected-react-router": "^6.8.0"
+    "redux-logger": "^3.0.6"
   }
 }

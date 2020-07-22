@@ -9,6 +9,10 @@ import Typography from "@material-ui/core/Typography";
 import CardActions from "@material-ui/core/CardActions";
 import Button from "@material-ui/core/Button";
 import makeStyles from "@material-ui/core/styles/makeStyles";
+import SetItem from "./SetItem";
+import Container from "@material-ui/core/Container";
+import Cards from "../cards/Cards";
+import useCards from "../../hooks/cards";
 
 
 const useStyles = makeStyles({
@@ -39,42 +43,58 @@ const Set = (props) => {
 
     console.log(set)
 
+    const {fetchCards, cards} = useCards();
+
+    useEffect(() => {
+        fetchCards(
+            {
+                set_id:
+                props.match.params.id
+            });
+    }, [])
+
+    console.log(cards)
+
+
     return (
         <>
-                <Grid container>
-                    <Grid item xs={12} md={8}>
-                        <Card className={classes.root}>
-                            <CardActionArea>
-                                <CardMedia
-                                    className={classes.media}
-                                    image="/images/flash-card.png"
-                                    title="Contemplative Reptile"
-                                />
-                                <CardContent>
-                                    <Typography gutterBottom variant="h5" component="h2">
-                                        {set && set.name ? set.name : null}
-                                    </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="p">
-                                        {set && set.description ? set.description : null}
-                                    </Typography>
-                                </CardContent>
-                            </CardActionArea>
-                            <CardActions>
-                                <Button size="small" color="primary">
-                                    {set && set.language1 ? set.language1 : null}
-                                </Button>
-                                <Button size="small" color="primary">
-                                    {set && set.language2 ? set.language2 : null}
-                                </Button>
-                            </CardActions>
-                        </Card>
-                    </Grid>
+            <Grid container>
+                <Grid item xs={12} md={8}>
+                    <Card className={classes.root}>
+                        <CardActionArea>
+                            <CardMedia
+                                className={classes.media}
+                                image="/images/flash-card.png"
+                                title="Contemplative Reptile"
+                            />
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="h2">
+                                    {set && set.name ? set.name : null}
+                                </Typography>
+                                <Typography variant="body2" color="textSecondary" component="p">
+                                    {set && set.description ? set.description : null}
+                                </Typography>
+                            </CardContent>
+                        </CardActionArea>
+                        <CardActions>
+                            <Button size="small" color="primary">
+                                {set && set.language1 ? set.language1 : null}
+                            </Button>
+                            <Button size="small" color="primary">
+                                {set && set.language2 ? set.language2 : null}
+                            </Button>
+                        </CardActions>
+                    </Card>
                 </Grid>
-            </>
-            )
-            };
+            </Grid>
+            <Cards cards={cards}/>
 
-            export default Set;
+
+        </>
+    )
+};
+
+export default Set;
 
 
 

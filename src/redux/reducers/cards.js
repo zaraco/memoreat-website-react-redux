@@ -4,8 +4,16 @@ const DEFAULT_STATE = {
 
 };
 
-const reducer = {}
+const reducer = {
 
+    CARDS_ALL_SUCCESS: (state, {payload}) => ({
+        ...state,
+        cards: payload.cards,
+    }),
+
+
+
+};
 export default (state = DEFAULT_STATE, action) =>
     !action || typeof reducer[action.type] === 'undefined'
         ? state
