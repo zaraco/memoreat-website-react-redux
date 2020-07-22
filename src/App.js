@@ -100,10 +100,10 @@ const App = (props) => {
                         <Route path='/auth/register' component={Register}/>
 
                         <Route path='/sets' exact component={Sets}/>
+                        <Route path='/sets/create' component={CreateSet}/>
                         <Route path='/sets/:id' exact component={Set}/>
                         <Route path='/sets/:id/exam' component={Exam}/>
                         <Route path='/sets/:id/study' component={Study}/>
-                        <Route path='/sets/create' component={CreateSet}/>
                         <Route path='/sets/:id/edit' component={EditSet}/>
 
                         <Route path='/analysis' component={Analysis}/>

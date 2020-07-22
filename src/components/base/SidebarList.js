@@ -72,7 +72,7 @@ const SidebarList = (props) => {
             {
                 title: "Create Set",
                 icon: <HomeRoundedIcon />,
-                link: "/sets/create'"
+                link: "/sets/create"
             },
         )
 
