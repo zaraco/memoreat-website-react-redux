@@ -13,13 +13,16 @@ const useMain = () => {
 
 
     const app_token = useSelector(mainSelectors.app_token);
+    const languages = useSelector(mainSelectors.languages);
+    const categories = useSelector(mainSelectors.categories);
+
 
     const fetchMainIndex = useCallback((payload) => {
         dispatch(fetchIndex(payload));
     },[]);
 
 
-    return {fetchMainIndex, app_token};
+    return {fetchMainIndex, app_token, languages, categories};
 };
 
 export default useMain;

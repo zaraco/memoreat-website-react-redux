@@ -1,11 +1,15 @@
 const DEFAULT_STATE = {
-   app_token:null
+   app_token:null,
+    languages: [],
+    categories: []
 };
 
 const reducer = {
     INDEX_SUCCESS: (state, {payload}) => ({
         ...state,
-        app_token: payload.app_token
+        app_token: payload.app_token,
+        languages: payload.languages,
+        categories: payload.categories
     }),
 
 
