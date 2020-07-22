@@ -17,7 +17,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Badge from "@material-ui/core/Badge";
 import MailIcon from '@material-ui/icons/Mail';
-import Link from "@material-ui/core/Link";
+import {Link} from "react-router-dom";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     },
     media: {
         height: 0,
-        paddingTop: '56.25%', // 16:9
+        paddingTop: '56.25%',
     },
     expand: {
         transform: 'rotate(0deg)',
@@ -59,7 +59,7 @@ const SetItem = (props) => {
 
     return (
         (set) ?
-            <Link to={`/set/${set.id}`} className="set-link" >
+            <Link to={`/sets/${set.id}`} className="set-link" >
                 <Card className={classes.root}>
                     <CardHeader
                         avatar={
