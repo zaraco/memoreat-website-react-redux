@@ -17,6 +17,7 @@ import Button from "@material-ui/core/Button";
 import useMain from "../../hooks/main";
 import {fetchIndex} from "../../redux/action/action";
 import {useDispatch} from "react-redux";
+import {Redirect} from "react-router";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -30,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Login() {
     const classes = useStyles();
-    const {login, authLoginForm, fetchAuthLogin, error} = useAuth();
+    const {login, authLoginForm, fetchAuthLogin, error, isLoggedIn} = useAuth();
     const {app_token} = useMain();
     const dispatch = useDispatch();
 
@@ -80,8 +81,11 @@ export default function Login() {
         })
     }
 
+
     return (
         <div className={classes.root}>
+            {isLoggedIn ? <Redirect to='/dashboard'/> : null}
+
             <Container>
                 {
                     error ? <Alert severity="error">{error}</Alert> : null

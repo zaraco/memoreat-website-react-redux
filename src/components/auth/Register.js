@@ -18,6 +18,7 @@ import useMain from "../../hooks/main";
 import {useDispatch} from "react-redux";
 import {fetchIndex} from "../../redux/action/action";
 import CheckboxRegister from "./CheckboxRegister";
+import {Redirect} from "react-router";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -35,7 +36,7 @@ export default function Register() {
 
     const classes = useStyles();
 
-    const {register, authRegisterForm, fetchAuthRegister, error} = useAuth();
+    const {register, authRegisterForm, fetchAuthRegister, error, isLoggedIn} = useAuth();
     const {app_token} = useMain();
     const dispatch = useDispatch();
 
@@ -130,109 +131,111 @@ export default function Register() {
         })
     }
 
-
     return (
-        <div className={classes.root}>
-            <Container>
-                <Grid container spacing={2}>
-                    <Grid item sm={12} md={4}>
-                        <TextField className={clsx(classes.margin, classes.textField)}
-                                   id="outlined-basic"
-                                   label="Email Address"
-                                   variant="outlined"
-                                   onChange={handleChangeEmail}
-                                   value={register ? register.email : ""}
-                        />
-                    </Grid>
-
-                    <Grid item sm={12} md={4}>
-                        <TextField className={clsx(classes.margin, classes.textField)}
-                                   id="outlined-basic"
-                                   label="Username"
-                                   variant="outlined"
-                                   onChange={handleChangeUsername}
-                                   value={register ? register.username : ""}
-                        />
-                    </Grid>
-                </Grid>
-
-                <Grid container spacing={2}>
-                    <Grid item sm={12} md={4}>
-                        <FormControl className={clsx(classes.margin, classes.textField)} variant="outlined">
-                            <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
-                            <OutlinedInput
-                                id="outlined-adornment-password"
-                                type={register && register.showPassword ? 'text' : 'password'}
-                                value={register ? register.password : ""}
-                                onChange={handleChangePassword}
-                                endAdornment={
-                                    <InputAdornment position="end">
-                                        <IconButton
-                                            aria-label="toggle password visibility"
-                                            onClick={handleClickShowPassword}
-                                            onMouseDown={handleMouseDownPassword}
-                                            edge="end"
-                                        >
-                                            {register && register.showPassword ? <Visibility/> : <VisibilityOff/>}
-                                        </IconButton>
-                                    </InputAdornment>
-                                }
-                                labelWidth={70}
+        <>
+            {isLoggedIn ? <Redirect to='/dashboard'/> : null}
+            <div className={classes.root}>
+                <Container>
+                    <Grid container spacing={2}>
+                        <Grid item sm={12} md={4}>
+                            <TextField className={clsx(classes.margin, classes.textField)}
+                                       id="outlined-basic"
+                                       label="Email Address"
+                                       variant="outlined"
+                                       onChange={handleChangeEmail}
+                                       value={register ? register.email : ""}
                             />
-                        </FormControl>
+                        </Grid>
 
-                    </Grid>
-
-                    <Grid item sm={12} md={4}>
-                        <FormControl className={clsx(classes.margin, classes.textField)} variant="outlined">
-                            <InputLabel htmlFor="outlined-adornment-password">Password Confirmation</InputLabel>
-                            <OutlinedInput
-                                id="outlined-adornment-password"
-                                type={register && register.showPassword ? 'text' : 'password'}
-                                value={register ? register.confirmPassword : ""}
-                                onChange={handleChangeConfirmPassword}
-                                endAdornment={
-                                    <InputAdornment position="end">
-                                        <IconButton
-                                            aria-label="toggle password visibility"
-                                            onClick={handleClickShowPassword2}
-                                            onMouseDown={handleMouseDownPassword2}
-                                            edge="end"
-                                        >
-                                            {register && register.showPassword ? <Visibility/> : <VisibilityOff/>}
-                                        </IconButton>
-                                    </InputAdornment>
-                                }
-                                labelWidth={170}
+                        <Grid item sm={12} md={4}>
+                            <TextField className={clsx(classes.margin, classes.textField)}
+                                       id="outlined-basic"
+                                       label="Username"
+                                       variant="outlined"
+                                       onChange={handleChangeUsername}
+                                       value={register ? register.username : ""}
                             />
-                        </FormControl>
+                        </Grid>
                     </Grid>
-                </Grid>
 
-                <Grid container spacing={2}>
-                    <Grid item sm={12} md={8}>
-                        <TextField className={clsx(classes.margin, classes.textField)}
-                                   id="outlined-basic"
-                                   label="Address"
-                                   variant="outlined"
-                                   onChange={handleChangeAddress}
-                                   value={register ? register.address : ""}
-                        />
+                    <Grid container spacing={2}>
+                        <Grid item sm={12} md={4}>
+                            <FormControl className={clsx(classes.margin, classes.textField)} variant="outlined">
+                                <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+                                <OutlinedInput
+                                    id="outlined-adornment-password"
+                                    type={register && register.showPassword ? 'text' : 'password'}
+                                    value={register ? register.password : ""}
+                                    onChange={handleChangePassword}
+                                    endAdornment={
+                                        <InputAdornment position="end">
+                                            <IconButton
+                                                aria-label="toggle password visibility"
+                                                onClick={handleClickShowPassword}
+                                                onMouseDown={handleMouseDownPassword}
+                                                edge="end"
+                                            >
+                                                {register && register.showPassword ? <Visibility/> : <VisibilityOff/>}
+                                            </IconButton>
+                                        </InputAdornment>
+                                    }
+                                    labelWidth={70}
+                                />
+                            </FormControl>
+
+                        </Grid>
+
+                        <Grid item sm={12} md={4}>
+                            <FormControl className={clsx(classes.margin, classes.textField)} variant="outlined">
+                                <InputLabel htmlFor="outlined-adornment-password">Password Confirmation</InputLabel>
+                                <OutlinedInput
+                                    id="outlined-adornment-password"
+                                    type={register && register.showPassword ? 'text' : 'password'}
+                                    value={register ? register.confirmPassword : ""}
+                                    onChange={handleChangeConfirmPassword}
+                                    endAdornment={
+                                        <InputAdornment position="end">
+                                            <IconButton
+                                                aria-label="toggle password visibility"
+                                                onClick={handleClickShowPassword2}
+                                                onMouseDown={handleMouseDownPassword2}
+                                                edge="end"
+                                            >
+                                                {register && register.showPassword ? <Visibility/> : <VisibilityOff/>}
+                                            </IconButton>
+                                        </InputAdornment>
+                                    }
+                                    labelWidth={170}
+                                />
+                            </FormControl>
+                        </Grid>
                     </Grid>
-                </Grid>
 
-                <CheckboxRegister/>
-
-
-                <Grid container spacing={2}>
-                    <Grid item sm={12} md={4}>
-                        <Button variant="contained" color="secondary" onClick={handleClickButton}>
-                            Submit
-                        </Button>
+                    <Grid container spacing={2}>
+                        <Grid item sm={12} md={8}>
+                            <TextField className={clsx(classes.margin, classes.textField)}
+                                       id="outlined-basic"
+                                       label="Address"
+                                       variant="outlined"
+                                       onChange={handleChangeAddress}
+                                       value={register ? register.address : ""}
+                            />
+                        </Grid>
                     </Grid>
-                </Grid>
 
-            </Container>
-        </div>
+                    <CheckboxRegister/>
+
+
+                    <Grid container spacing={2}>
+                        <Grid item sm={12} md={4}>
+                            <Button variant="contained" color="secondary" onClick={handleClickButton}>
+                                Submit
+                            </Button>
+                        </Grid>
+                    </Grid>
+
+                </Container>
+            </div>
+        </>
     );
 }

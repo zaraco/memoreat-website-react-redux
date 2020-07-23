@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="53068fc9-011a-4179-9c54-57f191c8a013" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/base/SidebarList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/base/SidebarList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/action/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/action.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/Register.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +86,7 @@
       <workItem from="1595315957640" duration="15919000" />
       <workItem from="1595405022943" duration="4471000" />
       <workItem from="1595412911707" duration="15032000" />
-      <workItem from="1595493060820" duration="5989000" />
+      <workItem from="1595493060820" duration="7038000" />
     </task>
     <servers />
   </component>
