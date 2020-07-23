@@ -85,10 +85,10 @@ export default function CreateSet() {
             <Grid container>
                 <Grid xs={12} md={8}>
                     <FormControl className={classes.formControl}>
-                        <InputLabel id="demo-mutiple-checkbox-label">Categories</InputLabel>
+                        <InputLabel id="demo-multiple-categories-checkbox-label">Categories</InputLabel>
                         <Select
-                            labelId="demo-mutiple-checkbox-label"
-                            id="demo-mutiple-checkbox"
+                            labelId="demo-multiple-categories-checkbox-label"
+                            id="demo-multiple-categories-checkbox"
                             multiple
                             value={createForm ? createForm.category : null}
                             onChange={changeHandlerCategory}
@@ -109,15 +109,15 @@ export default function CreateSet() {
             <Grid container>
                 <Grid xs={12} md={8}>
                     <FormControl variant="outlined" className={classes.formControl}>
-                        <InputLabel htmlFor="outlined-age-native-simple">Front Language</InputLabel>
+                        <InputLabel htmlFor="outlined-front-language-simple">Front Language</InputLabel>
                         <Select
                             native
                             // value={state.age}
                             // onChange={handleChange}
-                            label="Age"
+                            label="Front Language"
                             inputProps={{
-                                name: 'age',
-                                id: 'outlined-age-native-simple',
+                                name: 'Front Language',
+                                id: 'outlined-front-language-simple',
                             }}
                         >
                             <option aria-label="None" value=""/>
@@ -139,10 +139,10 @@ export default function CreateSet() {
                             native
                             // value={state.age}
                             //onChange={handleChange}
-                            label="Age"
+                            label="Back language"
                             inputProps={{
-                                name: 'age',
-                                id: 'outlined-age-native-simple',
+                                name: 'Back language',
+                                id: 'outlined-back-language-simple',
                             }}
                         >
                             <option aria-label="None" value=""/>
@@ -165,7 +165,7 @@ export default function CreateSet() {
                         label="Description"
                         multiline
                         rows={4}
-                        defaultValue="Default Value"
+                        defaultValue=""
                         variant="outlined"
                     />
                 </Grid>
