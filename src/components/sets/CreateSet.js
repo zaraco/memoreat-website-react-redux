@@ -42,7 +42,7 @@ const MenuProps = {
 export default function CreateSet() {
     const classes = useStyles();
     const {setsCreateForm, createForm} = useSets();
-    const {categories,languages} = useMain();
+    const {categories, languages} = useMain();
 
 
     const changeHandlerName = (e) => {
@@ -53,19 +53,31 @@ export default function CreateSet() {
     }
 
     const changeHandlerCategory = (event) => {
-        const { options } = event.target;
-        const value = [];
-        for (let i = 0, l = options.length; i < l; i += 1) {
-            if (options[i].selected) {
-                value.push(options[i].value);
-            }
-        }
+        console.log(event.target.value)
+
         setsCreateForm({
             ...createForm,
-            category: value
+            category: event.target.value
         });
     };
 
+    const changeHandlerLanguage1 = (event) => {
+        setsCreateForm({
+            ...createForm,
+            language1: event.target.value
+        });
+    };
+
+    const changeHandlerLanguage2 = (event) => {
+        setsCreateForm({
+            ...createForm,
+            language2: event.target.value
+        });
+    };
+
+
+
+    //console.log(languages)
 
 
     return (
@@ -83,7 +95,7 @@ export default function CreateSet() {
             </Grid>
 
             <Grid container>
-                <Grid xs={12} md={8}>
+                <Grid item xs={12} md={8}>
                     <FormControl className={classes.formControl}>
                         <InputLabel id="demo-multiple-categories-checkbox-label">Categories</InputLabel>
                         <Select
@@ -98,7 +110,7 @@ export default function CreateSet() {
                         >
                             {categories ? categories.map((item) => (
                                 <MenuItem key={item.id} value={item.id}>
-                                    <Checkbox checked={false}/>
+                                    <Checkbox checked={createForm ? createForm.category.includes(item.id) : false}/>
                                     <ListItemText primary={item.category}/>
                                 </MenuItem>
                             )) : null}
@@ -107,13 +119,13 @@ export default function CreateSet() {
                 </Grid>
             </Grid>
             <Grid container>
-                <Grid xs={12} md={8}>
+                <Grid item xs={12} md={8}>
                     <FormControl variant="outlined" className={classes.formControl}>
                         <InputLabel htmlFor="outlined-front-language-simple">Front Language</InputLabel>
                         <Select
                             native
-                            // value={state.age}
-                            // onChange={handleChange}
+                            value={createForm ? createForm.language1 : null}
+                            onChange={changeHandlerLanguage1}
                             label="Front Language"
                             inputProps={{
                                 name: 'Front Language',
@@ -123,8 +135,8 @@ export default function CreateSet() {
                             <option aria-label="None" value=""/>
                             {
                                 languages ? languages.map((item) =>
-                                    <option aria-label={item.language} value={item.id}/>
-                                ): null
+                                    <option value={item.id}>{item.language}</option>
+                                ) : null
                             }
 
                         </Select>
@@ -132,13 +144,14 @@ export default function CreateSet() {
                 </Grid>
             </Grid>
             <Grid container>
-                <Grid xs={12} md={8}>
+                <Grid item xs={12} md={8}>
                     <FormControl variant="outlined" className={classes.formControl}>
-                        <InputLabel htmlFor="outlined-back-language-simple" className={classes.labelWidth}>Back language</InputLabel>
+                        <InputLabel htmlFor="outlined-back-language-simple" className={classes.labelWidth}>Back
+                            language</InputLabel>
                         <Select
                             native
-                            // value={state.age}
-                            //onChange={handleChange}
+                            value={createForm ? createForm.language2 : null}
+                            onChange={changeHandlerLanguage2}
                             label="Back language"
                             inputProps={{
                                 name: 'Back language',
@@ -148,8 +161,8 @@ export default function CreateSet() {
                             <option aria-label="None" value=""/>
                             {
                                 languages ? languages.map((item) =>
-                                    <option aria-label={item.language} value={item.id}/>
-                                ): null
+                                    <option value={item.id}>{item.language}</option>
+                                ) : null
                             }
 
                         </Select>
@@ -158,15 +171,15 @@ export default function CreateSet() {
                 </Grid>
             </Grid>
 
-            <Grid container >
-                <Grid xs={12} md={8} >
+            <Grid container>
+                <Grid item xs={12} md={8}>
                     <TextField className={classes.formControl}
-                        id="outlined-multiline-static"
-                        label="Description"
-                        multiline
-                        rows={4}
-                        defaultValue=""
-                        variant="outlined"
+                               id="outlined-multiline-static"
+                               label="Description"
+                               multiline
+                               rows={4}
+                               defaultValue=""
+                               variant="outlined"
                     />
                 </Grid>
             </Grid>
