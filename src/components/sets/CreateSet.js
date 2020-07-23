@@ -13,6 +13,8 @@ import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import useSets from "../../hooks/sets";
 import useMain from "../../hooks/main";
+import Button from "@material-ui/core/Button";
+import useAuth from "../../hooks/auth";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -21,8 +23,13 @@ const useStyles = makeStyles((theme) => ({
         minWidth: 700,
         maxWidth: 900,
     },
-
     labelWidth: 170,
+
+    button: {
+        margin: theme.spacing(4),
+        minWidth: 200,
+        maxWidth: 400,
+    },
 
 }));
 
@@ -41,8 +48,9 @@ const MenuProps = {
 
 export default function CreateSet() {
     const classes = useStyles();
-    const {setsCreateForm, createForm} = useSets();
+    const {setsCreateForm, createForm, setsCreate} = useSets();
     const {categories, languages} = useMain();
+    const {token} = useAuth();
 
 
     const changeHandlerName = (e) => {
@@ -61,12 +69,29 @@ export default function CreateSet() {
         });
     };
 
+    const clickHandlerButton = (event) => {
+        event.preventDefault();
+        //console.log()
+        if(createForm){
+        setsCreate({
+            token: token,
+            name: createForm.name,
+            language1: createForm.language1,
+            language2: createForm.language2,
+            category: createForm.category,
+            description: createForm.description,
+        });
+        }
+    };
+
     const changeHandlerLanguage1 = (event) => {
+        event.preventDefault();
         setsCreateForm({
             ...createForm,
             language1: event.target.value
         });
     };
+
 
     const changeHandlerLanguage2 = (event) => {
         setsCreateForm({
@@ -75,13 +100,19 @@ export default function CreateSet() {
         });
     };
 
+ const changeHandlerDescription = (event) => {
+        setsCreateForm({
+            ...createForm,
+            description: event.target.value
+        });
+    };
 
 
     //console.log(languages)
 
 
     return (
-        <div>
+        <>
             <Grid container spacing={2}>
                 <Grid item sm={12} md={8}>
                     <TextField className={classes.formControl}
@@ -180,10 +211,20 @@ export default function CreateSet() {
                                rows={4}
                                defaultValue=""
                                variant="outlined"
+                               value={createForm ? createForm.description : null}
+                               onChange={changeHandlerDescription}
+
                     />
                 </Grid>
             </Grid>
-        </div>
+            <Grid container>
+                <Grid item xs={12} md={8}>
+                    <Button className={classes.button} variant="contained" color="primary" onClick={clickHandlerButton}>
+                        Submit
+                    </Button>
+                </Grid>
+            </Grid>
+        </>
 
     );
 };

@@ -13,7 +13,7 @@ export const API_ENDPOINTS = {
             all: `/sets`,
             one: `/set`,
             my:'/sets/my',
-            create: ``,
+            create: `/set/create`,
             edit: ``
         }
         ,
