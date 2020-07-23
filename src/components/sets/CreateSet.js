@@ -14,23 +14,18 @@ import TextField from "@material-ui/core/TextField";
 import useSets from "../../hooks/sets";
 import useMain from "../../hooks/main";
 
+
 const useStyles = makeStyles((theme) => ({
     formControl: {
-        margin: theme.spacing(3),
-        minWidth: 120,
-        maxWidth: 300,
+        margin: theme.spacing(4),
+        minWidth: 700,
+        maxWidth: 900,
     },
-    chips: {
-        display: 'flex',
-        flexWrap: 'wrap',
-    },
-    chip: {
-        margin: 2,
-    },
-    noLabel: {
-        marginTop: theme.spacing(3),
-    },
+
+    labelWidth: 170,
+
 }));
+
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -77,7 +72,7 @@ export default function CreateSet() {
         <div>
             <Grid container spacing={2}>
                 <Grid item sm={12} md={8}>
-                    <TextField className={clsx(classes.margin, classes.textField)}
+                    <TextField className={classes.formControl}
                                id="outlined-basic"
                                label="Title"
                                variant="outlined"
@@ -139,7 +134,7 @@ export default function CreateSet() {
             <Grid container>
                 <Grid xs={12} md={8}>
                     <FormControl variant="outlined" className={classes.formControl}>
-                        <InputLabel htmlFor="outlined-age-native-simple">Back language</InputLabel>
+                        <InputLabel htmlFor="outlined-back-language-simple" className={classes.labelWidth}>Back language</InputLabel>
                         <Select
                             native
                             // value={state.age}
@@ -158,13 +153,14 @@ export default function CreateSet() {
                             }
 
                         </Select>
+
                     </FormControl>
                 </Grid>
             </Grid>
 
-            <Grid container>
-                <Grid xs={12} md={8}>
-                    <TextField
+            <Grid container >
+                <Grid xs={12} md={8} >
+                    <TextField className={classes.formControl}
                         id="outlined-multiline-static"
                         label="Description"
                         multiline
