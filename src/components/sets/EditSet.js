@@ -59,7 +59,7 @@ const EditSet = (props) => {
                 set_id: props.match.params.id,
                 token: token
             });
-    });
+    }, []);
 
 
     const changeHandlerNameEdit = (e) => {
