@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from 'react-redux';
 import {useCallback} from 'react';
-import {fetchLogin, fetchRegister, loginForm, registerForm} from '../redux/action/action';
+import {fetchLogin, fetchRegister, loginForm, logout, registerForm} from '../redux/action/action';
 import {authSelectors} from "../redux/selectors/auth";
 import Register from "../components/auth/Register";
 
@@ -23,8 +23,6 @@ const useAuth = () => {
     const register = useSelector(authSelectors.register);
 
 
-
-
     const fetchAuthLogin = useCallback((payload) => {
         dispatch(fetchLogin(payload));
     }, []);
@@ -41,9 +39,24 @@ const useAuth = () => {
         dispatch(registerForm(payload));
     }, []);
 
+    const authLogout = useCallback(() => {
+        dispatch(logout());
+    }, []);
 
 
-    return {fetchAuthLogin, fetchAuthRegister,authRegisterForm,register, isLoggedIn, user, token, login, authLoginForm, error};
+    return {
+        fetchAuthLogin,
+        fetchAuthRegister,
+        authRegisterForm,
+        register,
+        isLoggedIn,
+        user,
+        token,
+        login,
+        authLoginForm,
+        error,
+        authLogout
+    };
 
 };
 

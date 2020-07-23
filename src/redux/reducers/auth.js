@@ -69,10 +69,22 @@ const reducer = {
         register: register,
     }),
 
+    LOGOUT: (state) => ({
+        ...state,
+        isLoggedIn: false,
+        token: null,
+        user: null,
+
+    }),
+
+
+
 };
 
 
-export default (state = DEFAULT_STATE, action) =>
+
+export default
+(state = DEFAULT_STATE, action) =>
     !action || typeof reducer[action.type] === 'undefined'
         ? state
         : reducer[action.type](state, action);

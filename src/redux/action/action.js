@@ -39,6 +39,13 @@ export const registerForm = (register) => (dispatch) => {
     });
 };
 
+export const logout = () => (dispatch) => {
+    return dispatch({
+        type: 'LOGOUT',
+
+    });
+};
+
 
 
 //sets
