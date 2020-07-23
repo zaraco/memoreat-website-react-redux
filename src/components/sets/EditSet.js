@@ -14,6 +14,7 @@ import useSets from "../../hooks/sets";
 import useMain from "../../hooks/main";
 import useAuth from "../../hooks/auth";
 import {fetchSetsOne} from "../../redux/action/action";
+import {Redirect} from "react-router";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -50,7 +51,7 @@ const EditSet = (props) => {
     const classes = useStyles();
     const {editForm, setsEdit, setsEditForm, fetchSet} = useSets();
     const {categories, languages} = useMain();
-    const {token} = useAuth();
+    const {token, isLoggedIn} = useAuth();
 
     console.log(editForm)
     useEffect(() => {
@@ -120,6 +121,7 @@ const EditSet = (props) => {
 
     return (
         <>
+            {!isLoggedIn ? <Redirect to='/auth/login'/> : null}
             <Grid container spacing={2}>
                 <Grid item sm={12} md={8}>
                     <TextField className={classes.formControl}

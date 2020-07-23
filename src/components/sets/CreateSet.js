@@ -15,6 +15,7 @@ import useSets from "../../hooks/sets";
 import useMain from "../../hooks/main";
 import Button from "@material-ui/core/Button";
 import useAuth from "../../hooks/auth";
+import {Redirect} from "react-router";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -50,7 +51,7 @@ export default function CreateSet() {
     const classes = useStyles();
     const {setsCreateForm, createForm, setsCreate} = useSets();
     const {categories, languages} = useMain();
-    const {token} = useAuth();
+    const {token, isLoggedIn} = useAuth();
 
 
     const changeHandlerName = (e) => {
@@ -110,9 +111,9 @@ export default function CreateSet() {
 
     //console.log(languages)
 
-
     return (
         <>
+            {!isLoggedIn ? <Redirect to='/auth/login'/> : null}
             <Grid container spacing={2}>
                 <Grid item sm={12} md={8}>
                     <TextField className={classes.formControl}
