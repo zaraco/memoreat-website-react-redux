@@ -92,6 +92,13 @@ export const createSetForm = (createForm) => (dispatch) => {
     });
 };
 
+export const editSetForm = (editForm) => (dispatch) => {
+    return dispatch({
+        type: 'SETS_EDIT_FORM',
+        editForm
+    });
+};
+
 export const fetchSetsCreate = (payload) => {
     return createAction({
         types: ['SETS_CREATE_REQUEST', 'SETS_CREATE_SUCCESS', 'SETS_CREATE_FAILURE'],

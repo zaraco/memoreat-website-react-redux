@@ -6,7 +6,7 @@ import {
     fetchSetsAll,
     fetchSetsOne,
     fetchSetsCreate,
-    fetchSetsEdit, fetchMySets, createSetForm,
+    fetchSetsEdit, fetchMySets, createSetForm, editSetForm,
 } from '../redux/action/action';
 
 
@@ -18,6 +18,7 @@ const useSets = () => {
     const set = useSelector(setsSelectors.set);
     const my = useSelector(setsSelectors.my);
     const createForm = useSelector(setsSelectors.createForm);
+    const editForm = useSelector(setsSelectors.editForm);
 
 
 
@@ -42,6 +43,12 @@ const useSets = () => {
         dispatch(fetchSetsCreate(payload));
     },[]);
 
+
+    const setsEditForm = useCallback((payload) => {
+        dispatch(editSetForm(payload));
+    },[]);
+
+
     const setsEdit = useCallback((payload) => {
         dispatch(fetchSetsEdit(payload));
     },[]);
@@ -49,7 +56,9 @@ const useSets = () => {
 
 
 
-    return {sets, set, fetchSets, fetchSet, setsCreate, setsEdit, my, fetchMy, createForm, setsCreateForm};
+
+
+    return {sets, set, fetchSets, fetchSet, setsCreate, my, fetchMy, createForm, setsCreateForm, editForm, setsEdit, setsEditForm};
 
 };
 

@@ -9,8 +9,14 @@ const DEFAULT_STATE = {
         description: '',
         category: []
 
+    },
+    editForm: {
+        name: '',
+        language1: '',
+        language2: '',
+        description: '',
+        category: []
     }
-
 };
 
 const reducer = {
@@ -22,6 +28,13 @@ const reducer = {
     SETS_ONE_SUCCESS: (state, {payload}) => ({
         ...state,
         set: payload.set,
+        editForm: {
+            name: payload.set.name,
+            language1: payload.set.language1,
+            language2: payload.set.language2,
+            description: payload.set.description,
+            category: []
+        }
     }),
 
     SETS_MY_SUCCESS: (state, {payload}) => ({
@@ -33,6 +46,12 @@ const reducer = {
         ...state,
         createForm: createForm,
     }),
+
+    SETS_EDIT_FORM: (state, {editForm}) => ({
+        ...state,
+        editForm: editForm,
+    }),
+
 
 
 };

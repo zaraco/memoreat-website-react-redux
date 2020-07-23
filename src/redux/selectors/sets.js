@@ -4,4 +4,5 @@ export const setsSelectors = {
     set: (state) => state.sets.set,
     my: (state) => state.sets.my,
     createForm: (state) => state.sets.createForm,
+    editForm: (state) => state.sets.editForm,
 };
