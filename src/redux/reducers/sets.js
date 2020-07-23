@@ -26,7 +26,7 @@ const reducer = {
 
     SETS_MY_SUCCESS: (state, {payload}) => ({
         ...state,
-        my: payload.my,
+        my: payload.sets,
     }),
 
     SETS_CREATE_FORM: (state, {createForm}) => ({
