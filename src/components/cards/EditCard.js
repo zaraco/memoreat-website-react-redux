@@ -5,6 +5,7 @@ const EditCard = () => {
     return(
         <>
 
+
         </>
     )
 };

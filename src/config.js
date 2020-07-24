@@ -19,8 +19,8 @@ export const API_ENDPOINTS = {
         ,
         cards: {
             all: `/set/cards`,
-            create: ``,
-            edit: ``
+            create: `/card/create`,
+            edit: `/card/edit`
 
         }
         ,
