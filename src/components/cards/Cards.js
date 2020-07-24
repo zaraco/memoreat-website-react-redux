@@ -20,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-
 const Cards = (props) => {
     const cards = props.cards;
     const {isFront, cardsSideChange} = useCards();

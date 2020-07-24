@@ -95,6 +95,7 @@ export default function CreateSet() {
 
 
     const changeHandlerLanguage2 = (event) => {
+        event.preventDefault();
         setsCreateForm({
             ...createForm,
             language2: event.target.value

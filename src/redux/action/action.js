@@ -156,6 +156,13 @@ export const fetchCardsCreate = (payload) => {
     });
 };
 
+export const createCardForm = (cardCreateForm) => (dispatch) => {
+    return dispatch({
+        type: 'CARDS_CREATE_FORM',
+        cardCreateForm
+    });
+};
+
 export const fetchCardsEdit = (payload) => {
     return createAction({
         types: ['CARDS_EDIT_REQUEST', 'CARDS_EDIT_SUCCESS', 'CARDS_EDIT_FAILURE'],

@@ -1,7 +1,11 @@
 const DEFAULT_STATE = {
     cards: [],
     card: null,
-    isFront: true
+    isFront: true,
+    createForm: {
+        side1: '',
+        side2: ''
+    }
 
 };
 
@@ -15,6 +19,11 @@ const reducer = {
     CARDS_SIDE_CHANGE: (state, {isFront}) => ({
         ...state,
         isFront: isFront,
+    }),
+
+    CARDS_CREATE_FORM: (state, {createForm}) => ({
+        ...state,
+        createForm: createForm,
     }),
 
 

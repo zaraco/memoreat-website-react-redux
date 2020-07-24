@@ -1,10 +1,107 @@
 import React from 'react';
+import Grid from "@material-ui/core/Grid";
+import TextField from "@material-ui/core/TextField";
+import {makeStyles} from "@material-ui/core/styles";
+import useCards from "../../hooks/cards";
+import useAuth from "../../hooks/auth";
+import Button from "@material-ui/core/Button";
+import {Redirect} from "react-router";
+
+
+
+const useStyles = makeStyles((theme) => ({
+    formControl: {
+        margin: theme.spacing(4),
+        minWidth: 700,
+        maxWidth: 900,
+    },
+    labelWidth: 170,
+
+    button: {
+        margin: theme.spacing(4),
+        minWidth: 200,
+        maxWidth: 400,
+    },
+
+}));
 
 
 const CreateCard = () => {
+    const classes = useStyles();
+    const {createForm,cardsCreatForm, cardsCreate } = useCards();
+    const {token, isLoggedIn} = useAuth();
+
+
+
+   const changeHandlerSide1 = (event) => {
+       cardsCreatForm({
+           ...createForm,
+           side1: event.target.value
+       });
+   };
+
+   const changeHandlerSide2 = (event) => {
+       cardsCreatForm({
+           ...createForm,
+           side2: event.target.value
+       });
+   };
+
+    const clickHandlerButton = (event) => {
+        event.preventDefault();
+        //console.log()
+        if(createForm){
+            cardsCreate({
+                token: token,
+                side1: createForm.side1,
+                side2: createForm.side2
+            });
+        }
+    };
+
     return(
         <>
+            {!isLoggedIn ? <Redirect to='/auth/login'/> : null}
 
+            <Grid container>
+                <Grid item xs={12} md={8}>
+                    <TextField className={classes.formControl}
+                               id="outlined-multiline-static"
+                               label="Front of Card"
+                               multiline
+                               rows={4}
+                               defaultValue=""
+                               variant="outlined"
+                               value={createForm ? createForm.side1 : null}
+                               onChange={changeHandlerSide1}
+
+                    />
+                </Grid>
+            </Grid>
+
+            <Grid container>
+                <Grid item xs={12} md={8}>
+                    <TextField className={classes.formControl}
+                               id="outlined-multiline-static"
+                               label="Back of Card"
+                               multiline
+                               rows={4}
+                               defaultValue=""
+                               variant="outlined"
+                               value={createForm ? createForm.side2 : null}
+                               onChange={changeHandlerSide2}
+
+                    />
+                </Grid>
+            </Grid>
+
+            <Grid container>
+                <Grid item xs={12} md={8}>
+                    <Button className={classes.button} variant="contained" color="secondary" onClick={clickHandlerButton}>
+                        Submit
+                    </Button>
+                </Grid>
+            </Grid>
         </>
     )
 };

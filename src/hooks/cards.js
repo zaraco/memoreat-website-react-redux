@@ -3,7 +3,7 @@ import { cardsSelectors } from '../redux/selectors/cards';
 import { useCallback } from 'react';
 
 import {
-    cardSide,
+    cardSide, createCardForm,
     fetchCardsAll,
     fetchCardsCreate,
     fetchCardsEdit, registerForm
@@ -16,6 +16,7 @@ const useCards = () => {
     const cards = useSelector(cardsSelectors.cards);
     const card = useSelector(cardsSelectors.card);
     const isFront = useSelector(cardsSelectors.isFront);
+    const createForm = useSelector(cardsSelectors.createForm);
 
 
 
@@ -37,9 +38,13 @@ const useCards = () => {
         dispatch(cardSide(payload));
     }, []);
 
+    const cardsCreatForm = useCallback((payload) => {
+        dispatch(createCardForm(payload));
+    }, []);
 
 
-    return {cards, card, fetchCards, cardsCreate, cardsEdit, isFront, cardsSideChange };
+
+    return {cards, card, fetchCards, cardsCreate, cardsEdit, isFront, cardsSideChange, createForm,cardsCreatForm };
 
 };
 
