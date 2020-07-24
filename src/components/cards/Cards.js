@@ -8,7 +8,8 @@ import Typography from "@material-ui/core/Typography";
 import useCards from "../../hooks/cards";
 import {useDispatch} from "react-redux";
 import {fetchIndex} from "../../redux/action/action";
-
+import {Link} from "react-router-dom";
+import {EditRounded} from "@material-ui/icons";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -17,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
         weight: '100%'
     },
 }));
-
 
 
 const Cards = (props) => {
@@ -48,14 +48,18 @@ const Cards = (props) => {
                       prev={prevHandler}
             >
                 {(cards) ? cards.map((item) => (
+                    <>
                         <Card className={classes.root} onClick={clickHandlerCard}>
                             <CardContent>
                                 <Typography variant="body2" color="textSecondary" component="p">
                                     {isFront ? item.side1 : item.side2}
                                 </Typography>
-
                             </CardContent>
                         </Card>
+                        <Link to={`/cards/${item.id}/edit`}>
+                            <EditRounded color="primary"/>
+                        </Link>
+                    </>
                 )) : null}
             </Carousel>
 

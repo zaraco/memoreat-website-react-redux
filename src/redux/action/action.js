@@ -14,6 +14,7 @@ export const fetchLogin = (payload) => {
         body: JSON.stringify({...payload, app_id: APP_ID})
     });
 };
+
 export const fetchRegister = (payload) => {
     return createAction({
         types: ['REGISTER_REQUEST', 'REGISTER_SUCCESS', 'REGISTER_FAILURE'],
@@ -170,12 +171,6 @@ export const fetchCardsCreate = (payload) => {
     });
 };
 
-export const createCardForm = (createForm) => (dispatch) => {
-    return dispatch({
-        type: 'CARDS_CREATE_FORM',
-        createForm
-    });
-};
 
 export const fetchCardsEdit = (payload) => {
     return createAction({
@@ -188,6 +183,23 @@ export const fetchCardsEdit = (payload) => {
 
     });
 };
+
+
+export const createCardForm = (createForm) => (dispatch) => {
+    return dispatch({
+        type: 'CARDS_CREATE_FORM',
+        createForm
+    });
+};
+
+
+export const editCardForm = (editForm) => (dispatch) => {
+    return dispatch({
+        type: 'CARDS_EDIT_FORM',
+        editForm
+    });
+};
+
 
 
 //exam

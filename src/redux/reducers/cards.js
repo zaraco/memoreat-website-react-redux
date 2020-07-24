@@ -35,12 +35,6 @@ const reducer = {
         isFront: isFront,
     }),
 
-
-    CARDS_CREATE_FORM: (state, {createForm}) => ({
-        ...state,
-        createForm: createForm,
-    }),
-
     CARDS_CREATE_SUCCESS : (state) => ({
         ...state,
         createForm: {
@@ -51,10 +45,20 @@ const reducer = {
     }),
 
 
+    CARDS_CREATE_FORM: (state, {createForm}) => ({
+        ...state,
+        createForm: createForm,
+    }),
 
 
+    CARDS_EDIT_FORM: (state, {editForm}) => ({
+        ...state,
+        editForm: editForm,
+    }),
 
 };
+
+
 export default (state = DEFAULT_STATE, action) =>
     !action || typeof reducer[action.type] === 'undefined'
         ? state

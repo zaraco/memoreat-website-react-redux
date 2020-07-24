@@ -4,5 +4,5 @@ export const cardsSelectors = {
     card: (state) => state.cards.card,
     isFront: (state) => state.cards.isFront,
     createForm: (state) => state.cards.createForm,
-    //EditForm: (state) => state.cards.EditForm,
+    editForm: (state) => state.cards.editForm,
 };
