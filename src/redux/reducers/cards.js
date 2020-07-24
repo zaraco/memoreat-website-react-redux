@@ -5,6 +5,10 @@ const DEFAULT_STATE = {
     createForm: {
         side1: '',
         side2: ''
+    },
+    editForm: {
+        side1: '',
+        side2: ''
     }
 
 };
@@ -14,6 +18,16 @@ const reducer = {
     CARDS_ALL_SUCCESS: (state, {payload}) => ({
         ...state,
         cards: payload.cards,
+    }),
+
+    CARDS_ONE_SUCCESS: (state, {payload}) => ({
+        ...state,
+        card: payload.card,
+        editForm: {
+            side1: payload.card.side1,
+            side2: payload.card.side2,
+        }
+
     }),
 
     CARDS_SIDE_CHANGE: (state, {isFront}) => ({

@@ -137,6 +137,20 @@ export const fetchCardsAll = (payload) => {
     });
 };
 
+export const fetchCardsOne = (payload) => {
+    return createAction({
+        types: ['CARDS_ONE_REQUEST', 'CARDS_ONE_SUCCESS', 'CARDS_ONE_FAILURE'],
+        endpoint: () => API_URL+API_ENDPOINTS.cards.all,
+        method: 'POST',
+        headers: API_HEADER,
+        body: JSON.stringify({...payload, app_id: APP_ID})
+
+
+    });
+};
+
+
+
 export const cardSide = (isFront) => (dispatch) => {
     return dispatch({
         type: 'CARDS_SIDE_CHANGE',

@@ -6,7 +6,7 @@ import {
     cardSide, createCardForm,
     fetchCardsAll,
     fetchCardsCreate,
-    fetchCardsEdit, registerForm
+    fetchCardsEdit, fetchCardsOne, registerForm
 } from '../redux/action/action';
 
 const useCards = () => {
@@ -22,6 +22,10 @@ const useCards = () => {
 
     const fetchCards = useCallback((payload) => {
         dispatch(fetchCardsAll(payload));
+    },[]);
+
+    const fetchCard = useCallback((payload) => {
+        dispatch(fetchCardsOne(payload));
     },[]);
 
 
@@ -44,7 +48,7 @@ const useCards = () => {
 
 
 
-    return {cards, card, fetchCards, cardsCreate, cardsEdit, isFront, cardsSideChange, createForm,cardsCreatForm };
+    return {cards, card, fetchCards, cardsCreate, cardsEdit, isFront, cardsSideChange, createForm,cardsCreatForm, fetchCard};
 
 };
 
