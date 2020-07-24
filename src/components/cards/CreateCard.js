@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import {makeStyles} from "@material-ui/core/styles";
@@ -6,6 +6,7 @@ import useCards from "../../hooks/cards";
 import useAuth from "../../hooks/auth";
 import Button from "@material-ui/core/Button";
 import {Redirect} from "react-router";
+import {fetchIndex} from "../../redux/action/action";
 
 
 
@@ -26,11 +27,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const CreateCard = () => {
+const CreateCard = (props) => {
     const classes = useStyles();
-    const {createForm,cardsCreatForm, cardsCreate } = useCards();
+    const {createForm,cardsCreatForm, cardsCreate} = useCards();
     const {token, isLoggedIn} = useAuth();
-
 
 
    const changeHandlerSide1 = (event) => {
@@ -49,12 +49,13 @@ const CreateCard = () => {
 
     const clickHandlerButton = (event) => {
         event.preventDefault();
-        //console.log()
+        console.log(createForm)
         if(createForm){
             cardsCreate({
-                token: token,
-                side1: createForm.side1,
-                side2: createForm.side2
+                cards: [[createForm.side1, createForm.side2]],
+                set_id: props.match.params.id,
+                token: token
+
             });
         }
     };
@@ -70,9 +71,8 @@ const CreateCard = () => {
                                label="Front of Card"
                                multiline
                                rows={4}
-                               defaultValue=""
                                variant="outlined"
-                               value={createForm ? createForm.side1 : null}
+                               value={createForm ? createForm.side1 : ''}
                                onChange={changeHandlerSide1}
 
                     />
@@ -86,9 +86,8 @@ const CreateCard = () => {
                                label="Back of Card"
                                multiline
                                rows={4}
-                               defaultValue=""
                                variant="outlined"
-                               value={createForm ? createForm.side2 : null}
+                               value={createForm ? createForm.side2 : ''}
                                onChange={changeHandlerSide2}
 
                     />

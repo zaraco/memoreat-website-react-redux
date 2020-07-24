@@ -156,10 +156,10 @@ export const fetchCardsCreate = (payload) => {
     });
 };
 
-export const createCardForm = (cardCreateForm) => (dispatch) => {
+export const createCardForm = (createForm) => (dispatch) => {
     return dispatch({
         type: 'CARDS_CREATE_FORM',
-        cardCreateForm
+        createForm
     });
 };
 

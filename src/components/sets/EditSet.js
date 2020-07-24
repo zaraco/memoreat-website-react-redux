@@ -53,7 +53,8 @@ const EditSet = (props) => {
     const {categories, languages} = useMain();
     const {token, isLoggedIn} = useAuth();
 
-    console.log(editForm)
+    //console.log(editForm)
+
     useEffect(() => {
         fetchSet(
             {

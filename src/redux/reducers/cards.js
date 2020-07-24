@@ -21,10 +21,21 @@ const reducer = {
         isFront: isFront,
     }),
 
+
     CARDS_CREATE_FORM: (state, {createForm}) => ({
         ...state,
         createForm: createForm,
     }),
+
+    CARDS_CREATE_SUCCESS : (state) => ({
+        ...state,
+        createForm: {
+            side1: '',
+            side2: ''
+        }
+
+    }),
+
 
 
 

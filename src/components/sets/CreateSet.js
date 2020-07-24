@@ -62,8 +62,7 @@ export default function CreateSet() {
     }
 
     const changeHandlerCategory = (event) => {
-        console.log(event.target.value)
-
+       // console.log(event.target.value)
         setsCreateForm({
             ...createForm,
             category: event.target.value
