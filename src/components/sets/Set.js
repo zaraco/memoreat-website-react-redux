@@ -15,6 +15,8 @@ import Cards from "../cards/Cards";
 import useCards from "../../hooks/cards";
 import {useDispatch} from "react-redux";
 import useAuth from "../../hooks/auth";
+import {Link} from "react-router-dom";
+import {EditRounded} from "@material-ui/icons";
 
 
 const useStyles = makeStyles({
@@ -38,7 +40,6 @@ const Set = (props) => {
     const {token} = useAuth();
 
 
-
     useEffect(() => {
         fetchSet(
             {
@@ -58,8 +59,11 @@ const Set = (props) => {
     }, [])
 
 
+
+
+
     //console.log(set)
-   // console.log(cards)
+    // console.log(cards)
 
     return (
         <>
@@ -95,6 +99,19 @@ const Set = (props) => {
             <Grid container>
                 <Grid item xs={12} md={8}>
                     <Cards cards={cards}/>
+                </Grid>
+            </Grid>
+
+            <Grid container>
+                <Grid item xs={12} md={2}>
+                    <Link to={`/sets/${props.match.params.id}/edit`}>
+                        <EditRounded color="primary" />
+                    </Link>
+                </Grid>
+                <Grid item xs={12} md={2}>
+                    <Link to={`/sets/${props.match.params.id}/cards/create`}>
+                        <EditRounded color="primary" />
+                    </Link>
                 </Grid>
             </Grid>
 
