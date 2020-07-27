@@ -26,7 +26,6 @@ const useAuth = () => {
 
     const isLoadingRegister = useSelector(authSelectors.isLoadingRegister);
 
-    const isLoadingLogout = useSelector(authSelectors.isLoadingLogout);
 
 
 

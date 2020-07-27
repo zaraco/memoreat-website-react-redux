@@ -9,7 +9,6 @@ export const authSelectors = {
     register: (state) => state.auth.register,
     isLoadingLogin: (state) => state.auth.isLoadingLogin,
     isLoadingRegister: (state) => state.auth.isLoadingRegister,
-    isLoadingLogout: (state) => state.auth.isLoadingLogout,
 
 
 };

@@ -84,58 +84,65 @@ export default function Login() {
 
 
     return (
-        <div className={classes.root}>
+        <>
+                <div className={classes.root}>
 
-            {isLoggedIn ? <Redirect to='/dashboard'/> : null}
+                    {isLoggedIn ? <Redirect to='/dashboard'/> : null}
 
-            <Container>
-                {
-                    error ? <Alert severity="error">{error}</Alert> : null
-                }
+                    {(isLoadingLogin === true) ? <CircularProgress color="secondary"/> :
 
-                <Grid container spacing={2}>
-                    <Grid item sm={12} md={4}>
-                        <TextField className={clsx(classes.margin, classes.textField)}
-                                   id="outlined-basic"
-                                   label="Outlined"
-                                   variant="outlined"
-                                   onChange={handleChangeUsername}
-                                   value={login ? login.username : ""}
-                        />
-                    </Grid>
-                    <Grid item sm={12} md={4}>
-                        <FormControl className={clsx(classes.margin, classes.textField)} variant="outlined">
-                            <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
-                            <OutlinedInput
-                                id="outlined-adornment-password"
-                                type={login && login.showPassword ? 'text' : 'password'}
-                                value={login ? login.password : ""}
-                                onChange={handleChangePassword}
-                                endAdornment={
-                                    <InputAdornment position="end">
-                                        <IconButton
-                                            aria-label="toggle password visibility"
-                                            onClick={handleClickShowPassword}
-                                            onMouseDown={handleMouseDownPassword}
-                                            edge="end"
-                                        >
-                                            {login && login.showPassword ? <Visibility/> : <VisibilityOff/>}
-                                        </IconButton>
-                                    </InputAdornment>
-                                }
-                                labelWidth={70}
-                            />
-                        </FormControl>
 
-                    </Grid>
-                    <Grid item sm={12} md={4}>
-                        <Button variant="contained" color="secondary" onClick={handleClickButton}>
-                            Secondary
-                        </Button>
+                        <Container>
+                            {
+                                error ? <Alert severity="error">{error}</Alert> : null
+                            }
 
-                    </Grid>
-                </Grid>
-            </Container>
-        </div>
+                            <Grid container spacing={2}>
+
+                                <Grid item sm={12} md={4}>
+                                    <TextField className={clsx(classes.margin, classes.textField)}
+                                               id="outlined-basic"
+                                               label="Outlined"
+                                               variant="outlined"
+                                               onChange={handleChangeUsername}
+                                               value={login ? login.username : ""}
+                                    />
+                                </Grid>
+                                <Grid item sm={12} md={4}>
+                                    <FormControl className={clsx(classes.margin, classes.textField)} variant="outlined">
+                                        <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+                                        <OutlinedInput
+                                            id="outlined-adornment-password"
+                                            type={login && login.showPassword ? 'text' : 'password'}
+                                            value={login ? login.password : ""}
+                                            onChange={handleChangePassword}
+                                            endAdornment={
+                                                <InputAdornment position="end">
+                                                    <IconButton
+                                                        aria-label="toggle password visibility"
+                                                        onClick={handleClickShowPassword}
+                                                        onMouseDown={handleMouseDownPassword}
+                                                        edge="end"
+                                                    >
+                                                        {login && login.showPassword ? <Visibility/> : <VisibilityOff/>}
+                                                    </IconButton>
+                                                </InputAdornment>
+                                            }
+                                            labelWidth={70}
+                                        />
+                                    </FormControl>
+
+                                </Grid>
+                                <Grid item sm={12} md={4}>
+                                    <Button variant="contained" color="secondary" onClick={handleClickButton}>
+                                        Secondary
+                                    </Button>
+
+                                </Grid>
+                            </Grid>
+                        </Container>
+                    }
+                </div>
+        </>
     );
 }

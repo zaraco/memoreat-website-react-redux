@@ -64,6 +64,7 @@ const CreateCard = (props) => {
     return (
         <>
             {!isLoggedIn ? <Redirect to='/auth/login'/> : null}
+
             <Grid container>
                 <Grid item xs={12} md={8}>
                     <TextField className={classes.formControl}
@@ -77,6 +78,7 @@ const CreateCard = (props) => {
 
                     />
                 </Grid>
+                }
             </Grid>
 
             <Grid container>
@@ -96,14 +98,13 @@ const CreateCard = (props) => {
 
             <Grid container>
                 <Grid item xs={12} md={8}>
-                        <Button className={classes.button} variant="contained" color="secondary"
-                                onClick={clickHandlerButton}>
-                            Submit
-                        </Button>
+                    <Button className={classes.button} variant="contained" color="secondary"
+                            onClick={clickHandlerButton}>
+                        Submit
+                    </Button>
 
                 </Grid>
             </Grid>
-
         </>
     )
 };
