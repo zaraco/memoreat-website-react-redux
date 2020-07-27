@@ -12,7 +12,7 @@ const DEFAULT_STATE = {
     },
     isLoadingCards: false,
     isLoadingCard: false,
-    isLoadingCreateCards: false,
+    isLoadingCreateCard: false,
 
 
 };
@@ -54,7 +54,7 @@ const reducer = {
 
     CARDS_CREATE_REQUEST: (state) => ({
         ...state,
-        isLoadingCreateCards: true,
+        isLoadingCreateCard: true,
     }),
 
     CARDS_CREATE_SUCCESS : (state) => ({
@@ -63,7 +63,7 @@ const reducer = {
             side1: '',
             side2: ''
         },
-        isLoadingCreateCards: false,
+        isLoadingCreateCard: false,
 
 
     }),

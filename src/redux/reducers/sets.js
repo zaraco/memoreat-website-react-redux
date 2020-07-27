@@ -16,13 +16,30 @@ const DEFAULT_STATE = {
         language2: '',
         description: '',
         category: []
-    }
+    },
+    isLoadingSets: false,
+    isLoadingSet: false,
+    isLoadingMYSet: false
 };
 
 const reducer = {
+
+    SETS_ALL_REQUEST: (state) => ({
+        ...state,
+        isLoadingSets: true
+
+    }),
     SETS_ALL_SUCCESS: (state, {payload}) => ({
         ...state,
         sets: payload.sets,
+        isLoadingSets: false
+
+    }),
+
+    SETS_ONE_REQUEST: (state) => ({
+        ...state,
+        isLoadingSet: true
+
     }),
 
     SETS_ONE_SUCCESS: (state, {payload}) => ({
@@ -34,12 +51,22 @@ const reducer = {
             language2: payload.set.language2,
             description: payload.set.description,
             category: []
-        }
+        },
+        isLoadingSet: false
+
+    }),
+
+    SETS_MY_REQUEST: (state) => ({
+        ...state,
+        isLoadingMYSet: true
+
     }),
 
     SETS_MY_SUCCESS: (state, {payload}) => ({
         ...state,
         my: payload.sets,
+        isLoadingMYSets: false
+
     }),
 
     SETS_CREATE_FORM: (state, {createForm}) => ({

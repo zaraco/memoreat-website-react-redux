@@ -20,7 +20,7 @@ const useCards = () => {
     const editForm = useSelector(cardsSelectors.editForm);
     const isLoadingCards = useSelector(cardsSelectors.isLoadingCards);
     const isLoadingCard = useSelector(cardsSelectors.isLoadingCard);
-    const isLoadingCreateCards = useSelector(cardsSelectors.isLoadingCreateCards);
+    const isLoadingCreateCard = useSelector(cardsSelectors.isLoadingCreateCard);
 
 
 
@@ -71,7 +71,7 @@ const useCards = () => {
         cardsEditForm,
         isLoadingCard,
         isLoadingCards,
-        isLoadingCreateCards
+        isLoadingCreateCard
 
     };
 
