@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="53068fc9-011a-4179-9c54-57f191c8a013" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hooks/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/cards.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/exam.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/exam.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/sets.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/sets.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/action/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/action.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +91,7 @@
       <workItem from="1595523815367" duration="13000" />
       <workItem from="1595577358869" duration="14569000" />
       <workItem from="1595602530462" duration="1465000" />
-      <workItem from="1595836737551" duration="20540000" />
+      <workItem from="1595836737551" duration="22631000" />
     </task>
     <servers />
   </component>
