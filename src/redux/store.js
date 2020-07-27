@@ -22,9 +22,8 @@ const persistConfig = {
     storage,
 }
 
-export const history = createBrowserHistory();
 
-const persistedReducer = persistReducer(persistConfig, reducers(history));
+const persistedReducer = persistReducer(persistConfig, reducers);
 
 
 const logger = createLogger({
@@ -35,7 +34,7 @@ export default function initStore() {
     const middlewares = [
         apiMiddleware,
         thunkMiddleware,
-        routerMiddleware(history),
+        routerMiddleware(),
         logger
     ];
 

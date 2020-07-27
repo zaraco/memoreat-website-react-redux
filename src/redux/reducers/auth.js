@@ -17,10 +17,21 @@ const DEFAULT_STATE = {
         address: '',
         gender: 0
     },
+    isLoadingLogin: false,
+    isLoadingRegister: false,
+    isLoadingLogout: false,
+
 
 };
 
 const reducer = {
+
+    LOGIN_REQUEST: (state) => ({
+        ...state,
+        isLoadingLogin: true,
+
+    }),
+
     LOGIN_SUCCESS: (state, {payload}) => ({
         ...state,
         token: payload.token,
@@ -28,7 +39,9 @@ const reducer = {
         isLoggedIn: true,
         login: null,
         error: null,
-        register: null
+        register: null,
+        isLoadingLogin: false,
+
     }),
 
     LOGIN_FAILURE: (state) => ({
@@ -37,6 +50,8 @@ const reducer = {
         user: null,
         isLoggedIn: false,
         error: "wrong",
+        isLoadingLogin: false,
+
 
     }),
 
@@ -52,7 +67,9 @@ const reducer = {
         user: payload.user,
         isLoggedIn: true,
         error: null,
-        register: null
+        register: null,
+        isLoadingRegister: false,
+
     }),
 
     REGISTER_FAILURE: (state) => ({
@@ -61,6 +78,8 @@ const reducer = {
         user: null,
         isLoggedIn: false,
         error: "wrong",
+        isLoadingRegister: false,
+
 
     }),
 
@@ -74,6 +93,8 @@ const reducer = {
         isLoggedIn: false,
         token: null,
         user: null,
+        isLoadingLogout: false,
+
 
     }),
 

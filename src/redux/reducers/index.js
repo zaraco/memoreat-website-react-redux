@@ -8,9 +8,7 @@ import users from "./users";
 import main from "./main";
 
 
-export default (history) =>
-    combineReducers({
-        router: connectRouter(history),
+export default combineReducers({
         analysis,
         auth,
         cards,

@@ -7,5 +7,9 @@ export const authSelectors = {
     login: (state) => state.auth.login,
     error: (state) => state.auth.error,
     register: (state) => state.auth.register,
+    isLoadingLogin: (state) => state.auth.isLoadingLogin,
+    isLoadingRegister: (state) => state.auth.isLoadingRegister,
+    isLoadingLogout: (state) => state.auth.isLoadingLogout,
+
 
 };

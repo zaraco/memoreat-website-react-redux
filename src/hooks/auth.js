@@ -22,6 +22,15 @@ const useAuth = () => {
 
     const register = useSelector(authSelectors.register);
 
+    const isLoadingLogin = useSelector(authSelectors.isLoadingLogin);
+
+    const isLoadingRegister = useSelector(authSelectors.isLoadingRegister);
+
+    const isLoadingLogout = useSelector(authSelectors.isLoadingLogout);
+
+
+
+
 
     const fetchAuthLogin = useCallback((payload) => {
         dispatch(fetchLogin(payload));
@@ -55,7 +64,10 @@ const useAuth = () => {
         login,
         authLoginForm,
         error,
-        authLogout
+        authLogout,
+        isLoadingLogin,
+        isLoadingRegister,
+        isLoadingLogout
     };
 
 };

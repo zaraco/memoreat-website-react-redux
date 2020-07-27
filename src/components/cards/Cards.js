@@ -57,7 +57,7 @@ const Cards = (props) => {
                             </CardContent>
                         </Card>
                         <Link to={`/cards/${item.id}/edit`}>
-                            <EditRounded color="primary"/>
+                           Edit: <EditRounded color="primary"/>
                         </Link>
                     </>
                 )) : null}

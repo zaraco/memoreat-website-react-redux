@@ -79,7 +79,6 @@ const App = (props) => {
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
-        <ConnectedRouter history={history}>
         <Router>
             <div className={classes.root}>
                 <CssBaseline/>
@@ -116,7 +115,6 @@ const App = (props) => {
                 </main>
             </div>
         </Router>
-        </ConnectedRouter>
     );
 };
 
