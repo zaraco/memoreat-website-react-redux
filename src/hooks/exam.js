@@ -2,8 +2,8 @@ import { useDispatch } from 'react-redux';
 import { useCallback } from 'react';
 
 import {
-    fetchExam,
-    fetchExamEnter
+    actionFetchExam, actionFetchExamEnter
+
 } from '../redux/action/action';
 
 
@@ -13,11 +13,11 @@ const useExam = () => {
 
 
     const exam = useCallback((payload) => {
-        dispatch(fetchExam(payload));
+        dispatch(actionFetchExam(payload));
     },[]);
 
     const examEnter = useCallback((payload) => {
-        dispatch(fetchExamEnter(payload));
+        dispatch(actionFetchExamEnter(payload));
     },[]);
 
 

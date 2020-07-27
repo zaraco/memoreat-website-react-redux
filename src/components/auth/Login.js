@@ -15,7 +15,7 @@ import Grid from "@material-ui/core/Grid";
 import useAuth from "../../hooks/auth";
 import Button from "@material-ui/core/Button";
 import useMain from "../../hooks/main";
-import {fetchIndex} from "../../redux/action/action";
+import {actionFetchIndex} from "../../redux/action/action";
 import {useDispatch} from "react-redux";
 import {Redirect} from "react-router";
 import CircularProgress from "@material-ui/core/CircularProgress";
@@ -37,7 +37,7 @@ export default function Login() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchIndex({}))
+        dispatch(actionFetchIndex({}))
     }, []);
 
     const handleChangeUsername = (e) => {

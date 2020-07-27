@@ -2,8 +2,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import { useCallback } from 'react';
 
 import {
-    fetchIndex,
-} from '../redux/action/action';
+    actionFetchIndex} from '../redux/action/action';
 import {mainSelectors} from "../redux/selectors/main";
 
 
@@ -18,7 +17,7 @@ const useMain = () => {
 
 
     const fetchMainIndex = useCallback((payload) => {
-        dispatch(fetchIndex(payload));
+        dispatch(actionFetchIndex(payload));
     },[]);
 
 

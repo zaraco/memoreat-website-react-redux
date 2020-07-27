@@ -3,10 +3,12 @@ import { setsSelectors } from '../redux/selectors/sets';
 import { useCallback } from 'react';
 
 import {
-    fetchSetsAll,
-    fetchSetsOne,
-    fetchSetsCreate,
-    fetchSetsEdit, fetchMySets, createSetForm, editSetForm,
+    createSetForm,
+    editSetForm,
+    actionFetchSetsAll,
+    actionFetchSetsOne,
+    actionFetchMySets,
+    actionFetchSetsCreate, actionFetchSetsEdit,
 } from '../redux/action/action';
 
 
@@ -26,15 +28,15 @@ const useSets = () => {
 
 
     const fetchSets = useCallback((payload) => {
-        dispatch(fetchSetsAll(payload));
+        dispatch(actionFetchSetsAll(payload));
     },[]);
 
     const fetchSet = useCallback((payload) => {
-        dispatch(fetchSetsOne(payload));
+        dispatch(actionFetchSetsOne(payload));
     },[]);
 
     const fetchMy = useCallback((payload) => {
-        dispatch(fetchMySets(payload));
+        dispatch(actionFetchMySets(payload));
     },[]);
 
 
@@ -43,7 +45,7 @@ const useSets = () => {
     },[]);
 
     const setsCreate = useCallback((payload) => {
-        dispatch(fetchSetsCreate(payload));
+        dispatch(actionFetchSetsCreate(payload));
     },[]);
 
 
@@ -53,7 +55,7 @@ const useSets = () => {
 
 
     const setsEdit = useCallback((payload) => {
-        dispatch(fetchSetsEdit(payload));
+        dispatch(actionFetchSetsEdit(payload));
     },[]);
 
 

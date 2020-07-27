@@ -16,7 +16,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import useAuth from "../../hooks/auth";
 import useMain from "../../hooks/main";
 import {useDispatch} from "react-redux";
-import {fetchIndex} from "../../redux/action/action";
+import {actionFetchIndex} from "../../redux/action/action";
 import CheckboxRegister from "./CheckboxRegister";
 import {Redirect} from "react-router";
 import CircularProgress from "@material-ui/core/CircularProgress";
@@ -42,7 +42,7 @@ export default function Register() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchIndex({}))
+        dispatch(actionFetchIndex({}))
     }, []);
 
 
