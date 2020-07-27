@@ -10,6 +10,7 @@ import {useDispatch} from "react-redux";
 import {fetchIndex} from "../../redux/action/action";
 import {Link} from "react-router-dom";
 import {EditRounded} from "@material-ui/icons";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -22,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Cards = (props) => {
     const cards = props.cards;
-    const {isFront, cardsSideChange} = useCards();
+    const {isFront, cardsSideChange, isLoadingCards} = useCards();
     const classes = useStyles();
 
     const clickHandlerCard = () => {
@@ -43,27 +44,31 @@ const Cards = (props) => {
 
     return (
         <>
-            <Carousel autoPlay={false} animation={'slide'} navButtonsAlwaysVisible={true} indicators={false}
-                      next={nextHandler}
-                      prev={prevHandler}
-            >
-                {(cards) ? cards.map((item) => (
-                    <>
-                        <Card className={classes.root} onClick={clickHandlerCard}>
-                            <CardContent>
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                    {isFront ? item.side1 : item.side2}
-                                </Typography>
-                            </CardContent>
-                        </Card>
-                        <Link to={`/cards/${item.id}/edit`}>
-                           Edit: <EditRounded color="primary"/>
-                        </Link>
-                    </>
-                )) : null}
-            </Carousel>
+            {
+                (isLoadingCards === true) ? <CircularProgress color="secondary"/> :
 
+                    <Carousel autoPlay={false} animation={'slide'} navButtonsAlwaysVisible={true} indicators={false}
+                              next={nextHandler}
+                              prev={prevHandler}
+                    >
+                        {(cards) ? cards.map((item) => (
+                            <>
+                                <Card className={classes.root} onClick={clickHandlerCard}>
+                                    <CardContent>
+                                        <Typography variant="body2" color="textSecondary" component="p">
+                                            {isFront ? item.side1 : item.side2}
+                                        </Typography>
+                                    </CardContent>
+                                </Card>
+                                <Link to={`/cards/${item.id}/edit`}>
+                                    Edit: <EditRounded color="primary"/>
+                                </Link>
+                            </>
+                        )) : null}
+                    </Carousel>
+            }
         </>
+            
     );
 
 };

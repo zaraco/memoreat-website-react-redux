@@ -17,6 +17,7 @@ import {useDispatch} from "react-redux";
 import useAuth from "../../hooks/auth";
 import {Link} from "react-router-dom";
 import {EditRounded} from "@material-ui/icons";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 
 const useStyles = makeStyles({
@@ -35,7 +36,7 @@ const Set = (props) => {
 
     const classes = useStyles();
 
-    const {fetchSet, set} = useSets();
+    const {fetchSet, set, isLoadingSet} = useSets();
     const {fetchCards, cards, cardsSideChange} = useCards();
     const {token} = useAuth();
 
@@ -59,68 +60,67 @@ const Set = (props) => {
     }, [])
 
 
-
-
-
     //console.log(set)
     // console.log(cards)
 
     return (
         <>
             <Grid container>
-                <Grid item xs={12} md={8}>
-                    <Card className={classes.root}>
-                        <CardActionArea>
-                            <CardMedia
-                                className={classes.media}
-                                image="/images/flash-card.png"
-                                title="Contemplative Reptile"
-                            />
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="h2">
-                                    {set && set.name ? set.name : null}
-                                </Typography>
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                    {set && set.description ? set.description : null}
-                                </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                        <CardActions>
-                            <Button size="small" color="primary">
-                                {set && set.language1 ? set.language1 : null}
-                            </Button>
-                            <Button size="small" color="primary">
-                                {set && set.language2 ? set.language2 : null}
-                            </Button>
-                        </CardActions>
-                    </Card>
-                </Grid>
-            </Grid>
-            <Grid container>
-                <Grid item xs={12} md={8}>
-                    <Cards cards={cards}/>
-                </Grid>
+                        <Grid item xs={12} md={8}>
+                            <Cards cards={cards}/>
+                        </Grid>
             </Grid>
 
             <Grid container>
-                <Grid item xs={12} md={2}>
-                    <Link to={`/sets/${props.match.params.id}/edit`}>
-                        <EditRounded color="primary" />
-                    </Link>
-                </Grid>
-                <Grid item xs={12} md={2}>
-                    <Link to={`/sets/${props.match.params.id}/cards/create`}>
-                        <EditRounded color="primary" />
-                    </Link>
-                </Grid>
+                {(isLoadingSet === true) ? <CircularProgress color="secondary"/> :
+                    <Grid item xs={12} md={8}>
+                        <Card className={classes.root}>
+                            <CardActionArea>
+                                <CardMedia
+                                    className={classes.media}
+                                    image="/images/flash-card.png"
+                                    title="Contemplative Reptile"
+                                />
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="h2">
+                                        {set && set.name ? set.name : null}
+                                    </Typography>
+                                    <Typography variant="body2" color="textSecondary" component="p">
+                                        {set && set.description ? set.description : null}
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                            <CardActions>
+                                <Button size="small" color="primary">
+                                    {set && set.language1 ? set.language1 : null}
+                                </Button>
+                                <Button size="small" color="primary">
+                                    {set && set.language2 ? set.language2 : null}
+                                </Button>
+                            </CardActions>
+                        </Card>
+                    </Grid>
+                }
             </Grid>
 
 
-        </>
-    )
-};
+                    <Grid container>
+                        <Grid item xs={12} md={2}>
+                            <Link to={`/sets/${props.match.params.id}/edit`}>
+                                <EditRounded color="primary"/>
+                            </Link>
+                        </Grid>
+                        <Grid item xs={12} md={2}>
+                            <Link to={`/sets/${props.match.params.id}/cards/create`}>
+                                <EditRounded color="primary"/>
+                            </Link>
+                        </Grid>
+                    </Grid>
+                </>
+                )
+                };
 
-export default Set;
+                export default Set;
 
 
 

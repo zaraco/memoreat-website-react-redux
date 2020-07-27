@@ -6,10 +6,11 @@ import SetItem from "../sets/SetItem";
 import useAuth from "../../hooks/auth";
 import Button from "@material-ui/core/Button";
 import {Redirect} from "react-router";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 
 const Dashboard = () => {
-    const {my, fetchMy} = useSets();
+    const {my, fetchMy, isLoadingMySet} = useSets();
     const {token, authLogout, isLoggedIn} = useAuth();
 
 
@@ -31,11 +32,14 @@ const Dashboard = () => {
             {!isLoggedIn ? <Redirect to='/'/> : null}
             <Container>
                 <Grid container>
-                    <Grid item xs={12} md={4}>
-                        {(my) ? my.map((item) => (
-                            <SetItem key={item.id} set={item}/>
-                        )) : null}
-                    </Grid>
+
+                    {(isLoadingMySet === true) ? <CircularProgress color="secondary"/> :
+                        <Grid item xs={12} md={4}>
+                            {(my) ? my.map((item) => (
+                                <SetItem key={item.id} set={item}/>
+                            )) : null}
+                        </Grid>
+                    }
                 </Grid>
                 <Grid container>
                     <Grid item xs={12} md={4}>

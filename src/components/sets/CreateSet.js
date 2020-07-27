@@ -16,6 +16,7 @@ import useMain from "../../hooks/main";
 import Button from "@material-ui/core/Button";
 import useAuth from "../../hooks/auth";
 import {Redirect} from "react-router";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -113,7 +114,7 @@ export default function CreateSet() {
 
     return (
         <>
-            {!isLoggedIn ? <Redirect to='/auth/login'/> : null}
+                {!isLoggedIn ? <Redirect to='/auth/login'/> : null}
             <Grid container spacing={2}>
                 <Grid item sm={12} md={8}>
                     <TextField className={classes.formControl}

@@ -19,7 +19,7 @@ const DEFAULT_STATE = {
     },
     isLoadingSets: false,
     isLoadingSet: false,
-    isLoadingMYSet: false
+    isLoadingMySet: false
 };
 
 const reducer = {
@@ -58,14 +58,14 @@ const reducer = {
 
     SETS_MY_REQUEST: (state) => ({
         ...state,
-        isLoadingMYSet: true
+        isLoadingMySet: true
 
     }),
 
     SETS_MY_SUCCESS: (state, {payload}) => ({
         ...state,
         my: payload.sets,
-        isLoadingMYSets: false
+        isLoadingMySet: false
 
     }),
 

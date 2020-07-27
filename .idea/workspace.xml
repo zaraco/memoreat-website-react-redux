@@ -3,8 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="53068fc9-011a-4179-9c54-57f191c8a013" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/cards.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/selectors/cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/selectors/cards.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cards/Cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cards/Cards.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cards/CreateCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cards/CreateCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sets/CreateSet.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sets/CreateSet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sets/Set.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sets/Set.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sets/Sets.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sets/Sets.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/users/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/sets.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/sets.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/sets.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/sets.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/selectors/sets.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/selectors/sets.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +50,7 @@
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -90,7 +98,7 @@
       <workItem from="1595523815367" duration="13000" />
       <workItem from="1595577358869" duration="14569000" />
       <workItem from="1595602530462" duration="1465000" />
-      <workItem from="1595836737551" duration="7123000" />
+      <workItem from="1595836737551" duration="13210000" />
     </task>
     <servers />
   </component>

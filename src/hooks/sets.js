@@ -19,6 +19,9 @@ const useSets = () => {
     const my = useSelector(setsSelectors.my);
     const createForm = useSelector(setsSelectors.createForm);
     const editForm = useSelector(setsSelectors.editForm);
+    const isLoadingSets = useSelector(setsSelectors.isLoadingSets);
+    const isLoadingSet = useSelector(setsSelectors.isLoadingSet);
+    const isLoadingMySet = useSelector(setsSelectors.isLoadingMySet);
 
 
 
@@ -58,7 +61,22 @@ const useSets = () => {
 
 
 
-    return {sets, set, fetchSets, fetchSet, setsCreate, my, fetchMy, createForm, setsCreateForm, editForm, setsEdit, setsEditForm};
+    return {sets,
+        set,
+        fetchSets,
+        fetchSet,
+        setsCreate,
+        my,
+        fetchMy,
+        createForm,
+        setsCreateForm,
+        editForm,
+        setsEdit,
+        setsEditForm,
+        isLoadingSets,
+        isLoadingSet,
+        isLoadingMySet
+    };
 
 };
 
