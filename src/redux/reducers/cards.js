@@ -9,15 +9,30 @@ const DEFAULT_STATE = {
     editForm: {
         side1: '',
         side2: ''
-    }
+    },
+    isLoadingCards: false,
+    isLoadingCard: false,
+    isLoadingCreateCards: false,
+
 
 };
 
 const reducer = {
+    CARDS_ALL_REQUEST: (state) => ({
+        ...state,
+        isLoadingCards: true,
+    }),
 
     CARDS_ALL_SUCCESS: (state, {payload}) => ({
         ...state,
         cards: payload.cards,
+        isLoadingCards: false,
+
+    }),
+
+    CARDS_ONE_REQUEST: (state) => ({
+        ...state,
+        isLoadingCard: true,
     }),
 
     CARDS_ONE_SUCCESS: (state, {payload}) => ({
@@ -26,7 +41,9 @@ const reducer = {
         editForm: {
             side1: payload.card.side1,
             side2: payload.card.side2,
-        }
+        },
+        isLoadingCard: false,
+
 
     }),
 
@@ -35,12 +52,19 @@ const reducer = {
         isFront: isFront,
     }),
 
+    CARDS_CREATE_REQUEST: (state) => ({
+        ...state,
+        isLoadingCreateCards: true,
+    }),
+
     CARDS_CREATE_SUCCESS : (state) => ({
         ...state,
         createForm: {
             side1: '',
             side2: ''
-        }
+        },
+        isLoadingCreateCards: false,
+
 
     }),
 

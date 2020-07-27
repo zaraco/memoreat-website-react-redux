@@ -18,6 +18,9 @@ const useCards = () => {
     const isFront = useSelector(cardsSelectors.isFront);
     const createForm = useSelector(cardsSelectors.createForm);
     const editForm = useSelector(cardsSelectors.editForm);
+    const isLoadingCards = useSelector(cardsSelectors.isLoadingCards);
+    const isLoadingCard = useSelector(cardsSelectors.isLoadingCard);
+    const isLoadingCreateCards = useSelector(cardsSelectors.isLoadingCreateCards);
 
 
 
@@ -53,7 +56,24 @@ const useCards = () => {
 
 
 
-    return {cards, card, fetchCards, cardsCreate, cardsEdit, isFront, cardsSideChange, createForm,cardsCreatForm, fetchCard, editForm, cardsEditForm};
+    return {
+        cards,
+        card,
+        fetchCards,
+        cardsCreate,
+        cardsEdit,
+        isFront,
+        cardsSideChange,
+        createForm,
+        cardsCreatForm,
+        fetchCard,
+        editForm,
+        cardsEditForm,
+        isLoadingCard,
+        isLoadingCards,
+        isLoadingCreateCards
+
+    };
 
 };
 
