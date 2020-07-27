@@ -65,46 +65,50 @@ const CreateCard = (props) => {
         <>
             {!isLoggedIn ? <Redirect to='/auth/login'/> : null}
 
-            <Grid container>
-                <Grid item xs={12} md={8}>
-                    <TextField className={classes.formControl}
-                               id="outlined-multiline-static"
-                               label="Front of Card"
-                               multiline
-                               rows={4}
-                               variant="outlined"
-                               value={createForm ? createForm.side1 : ''}
-                               onChange={changeHandlerSide1}
+            {(isLoadingCreateCard === true) ? <CircularProgress color="secondary"/> :
+                <div>
+                    <Grid container>
+                        <Grid item xs={12} md={8}>
+                            <TextField className={classes.formControl}
+                                       id="outlined-multiline-static"
+                                       label="Front of Card"
+                                       multiline
+                                       rows={4}
+                                       variant="outlined"
+                                       value={createForm ? createForm.side1 : ''}
+                                       onChange={changeHandlerSide1}
 
-                    />
-                </Grid>
-                }
-            </Grid>
+                            />
+                        </Grid>
+                        }
+                    </Grid>
 
-            <Grid container>
-                <Grid item xs={12} md={8}>
-                    <TextField className={classes.formControl}
-                               id="outlined-multiline-static"
-                               label="Back of Card"
-                               multiline
-                               rows={4}
-                               variant="outlined"
-                               value={createForm ? createForm.side2 : ''}
-                               onChange={changeHandlerSide2}
+                    <Grid container>
+                        <Grid item xs={12} md={8}>
+                            <TextField className={classes.formControl}
+                                       id="outlined-multiline-static"
+                                       label="Back of Card"
+                                       multiline
+                                       rows={4}
+                                       variant="outlined"
+                                       value={createForm ? createForm.side2 : ''}
+                                       onChange={changeHandlerSide2}
 
-                    />
-                </Grid>
-            </Grid>
+                            />
+                        </Grid>
+                    </Grid>
 
-            <Grid container>
-                <Grid item xs={12} md={8}>
-                    <Button className={classes.button} variant="contained" color="secondary"
-                            onClick={clickHandlerButton}>
-                        Submit
-                    </Button>
+                    <Grid container>
+                        <Grid item xs={12} md={8}>
+                            <Button className={classes.button} variant="contained" color="secondary"
+                                    onClick={clickHandlerButton}>
+                                Submit
+                            </Button>
 
-                </Grid>
-            </Grid>
+                        </Grid>
+                    </Grid>
+                </div>
+            }
         </>
     )
 };
