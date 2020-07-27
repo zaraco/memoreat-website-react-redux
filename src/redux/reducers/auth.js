@@ -19,7 +19,6 @@ const DEFAULT_STATE = {
     },
     isLoadingLogin: false,
     isLoadingRegister: false,
-    isLoadingLogout: false,
 
 
 };
@@ -60,6 +59,12 @@ const reducer = {
         login: login,
     }),
 
+    REGISTER_REQUEST: (state) => ({
+        ...state,
+        isLoadingRegister: true,
+
+    }),
+
 
     REGISTER_SUCCESS: (state, {payload}) => ({
         ...state,
@@ -93,7 +98,6 @@ const reducer = {
         isLoggedIn: false,
         token: null,
         user: null,
-        isLoadingLogout: false,
 
 
     }),
