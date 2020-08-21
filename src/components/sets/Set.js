@@ -65,8 +65,8 @@ const Set = (props) => {
 
     return (
         <>
-            <Grid container>
-                        <Grid item xs={12} md={8}>
+            <Grid container justify="center" alignItems="center">
+                        <Grid item xs={8}>
                             <Cards cards={cards}/>
                         </Grid>
             </Grid>

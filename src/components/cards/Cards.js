@@ -55,7 +55,7 @@ const Cards = (props) => {
                             <>
                                 <Card className={classes.root} onClick={clickHandlerCard}>
                                     <CardContent>
-                                        <Typography variant="body2" color="textSecondary" component="p">
+                                        <Typography variant="body2" color="textSecondary" component="p" >
                                             {isFront ? item.side1 : item.side2}
                                         </Typography>
                                     </CardContent>
@@ -68,7 +68,7 @@ const Cards = (props) => {
                     </Carousel>
             }
         </>
-            
+
     );
 
 };
